@@ -1,14 +1,10 @@
-# TV2 — Proposed Method: WRS/WAT và thiết kế pipeline
-
-Nguồn học thuật: Wu et al., *Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling*, NeurIPS 2024, Section 2–3, Algorithm 1 (trang 3–5 của [paper trong repo](../papers/wrs-neurips2024.pdf)). Các quy ước xử lý biên bên dưới là đề xuất triển khai của nhóm, không phải chi tiết đã được tác giả xác nhận. Tài liệu này giải thích và thiết kế, chưa phải code đã chạy.
+Nguồn học thuật: Wu et al., _Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling_, NeurIPS 2024, Section 2–3, Algorithm 1 (trang 3–5 của [paper trong repo](../papers/wrs-neurips2024.pdf)).
 
 ## 1. Bài toán WAT giải quyết
 
 PAC và FSOL học online: nhận từng cặp `(x_t, y_t)`, rồi quyết định giữ nguyên hoặc cập nhật model. Một mẫu nhiễu có thể làm model cập nhật quá mạnh, khiến chất lượng trên dữ liệu chưa thấy giảm đột ngột. Nếu chuyện này xảy ra cuối luồng, dùng riêng vector cuối cùng có thể cho kết quả kém.
 
 WAT (WRS-Augmented Training) giữ một reservoir gồm tối đa K vector model từng xuất hiện trong quá trình học. Các model có nhiều bước Passive liên tiếp được ưu tiên lấy mẫu. Model suy luận là trung bình các vector trong reservoir, tùy chọn thêm voting-based zeroing. Base learner vẫn cập nhật theo quy tắc gốc; vector trung bình không được dùng thay thế trạng thái đang học.
-
-Phân biệt: WRS là thuật toán lấy mẫu; WAT là phương pháp dùng WRS để ổn định quá trình học. Reservoir lưu **vector model**, không lưu các mẫu dữ liệu để replay.
 
 ## 2. Passive, Aggressive và Survival Time
 
@@ -20,10 +16,10 @@ Paper dùng hinge loss:
 
 $$\ell_t=\max(0,1-y_t w_t^\top x_t).$$
 
-| Điều kiện | Trạng thái | Xử lý |
-|---|---|---|
-| `y_t w_t^T x_t >= 1` | Passive, loss bằng 0 | Giữ nguyên model, tăng survival counter |
-| `y_t w_t^T x_t < 1` | Aggressive, loss dương | Kết thúc candidate cũ, xét đưa vào reservoir, rồi cập nhật learner |
+| Điều kiện            | Trạng thái             | Xử lý                                                              |
+| -------------------- | ---------------------- | ------------------------------------------------------------------ |
+| `y_t w_t^T x_t >= 1` | Passive, loss bằng 0   | Giữ nguyên model, tăng survival counter                            |
+| `y_t w_t^T x_t < 1`  | Aggressive, loss dương | Kết thúc candidate cũ, xét đưa vào reservoir, rồi cập nhật learner |
 
 Ví dụ: `y=+1` và score `0.3` cho dự đoán đúng dấu, nhưng hinge loss là `0.7`, nên vẫn Aggressive. Không dùng điều kiện “predict đúng” để thay cho `loss == 0`.
 
@@ -37,7 +33,7 @@ Model tồn tại lâu mà không cần sửa đã vượt qua nhiều mẫu ti�
 
 Trực giác minh họa: nếu một model cố định gặp các mẫu i.i.d., mỗi mẫu có xác suất gây Aggressive là q, thì số lần Passive trước lần Aggressive đầu tiên có phân phối hình học, với `E[s]=(1-q)/q` khi `0<q<=1`. q càng nhỏ thì survival kỳ vọng càng lớn. Đây là giải thích trực giác, không phải khẳng định survival bằng test accuracy; q ở đây là xác suất vi phạm margin.
 
-Survival cũng bị ảnh hưởng bởi may mắn và thứ tự stream. Vì vậy paper dùng lấy mẫu và tổng hợp nhiều model thay vì chỉ chọn một model sống lâu nhất. Lập luận tổng quát hóa trong Section 3.2 có các giả định, gồm i.i.d.; không suy ra bảo đảm tương tự cho mọi luồng có concept drift.
+Survival có thể bị ảnh hưởng bởi may mắn và thứ tự stream. Vì vậy paper dùng lấy mẫu và tổng hợp nhiều model thay vì chỉ chọn một model sống lâu nhất. Lập luận tổng quát hóa trong Section 3.2 có các giả định, gồm i.i.d.; không suy ra bảo đảm tương tự cho mọi luồng có concept drift.
 
 ## 3. Weighted Reservoir Sampling (WRS)
 
@@ -53,10 +49,10 @@ Với cùng u, b lớn làm priority gần 1 hơn, nên tăng cơ hội được
 
 Hai cách tạo trọng số trong paper:
 
-| Weighting scheme | Trọng số b | Ý nghĩa |
-|---|---|---|
-| Standard | `s` | Ưu tiên survival theo mức tuyến tính |
-| Exponential | `exp(s)` | Ưu tiên mạnh hơn cho candidate sống lâu |
+| Weighting scheme | Trọng số b | Ý nghĩa                                 |
+| ---------------- | ---------- | --------------------------------------- |
+| Standard         | `s`        | Ưu tiên survival theo mức tuyến tính    |
+| Exponential      | `exp(s)`   | Ưu tiên mạnh hơn cho candidate sống lâu |
 
 Lưu ý `exp(0)=1` trong Exponential, còn Standard cho `b=0` khi không có bước Passive. Epsilon tránh chia cho 0 trong priority; không tự động giải quyết mẫu số bằng 0 khi weighted averaging.
 
@@ -64,30 +60,30 @@ Lưu ý `exp(0)=1` trong Exponential, còn Standard cho `b=0` khi không có bư
 
 Bỏ epsilon trong phép tính minh họa:
 
-| Candidate | s=b | u | Priority xấp xỉ | Reservoir sau khi xét |
-|---|---:|---:|---:|---|
-| A | 2 | 0.25 | 0.500 | A |
-| B | 4 | 0.0625 | 0.500 | A, B |
-| C | 1 | 0.8 | 0.800 | C và một trong A/B, theo quy tắc tie |
+| Candidate | s=b |      u | Priority xấp xỉ | Reservoir sau khi xét                |
+| --------- | --: | -----: | --------------: | ------------------------------------ |
+| A         |   2 |   0.25 |           0.500 | A                                    |
+| B         |   4 | 0.0625 |           0.500 | A, B                                 |
+| C         |   1 |    0.8 |           0.800 | C và một trong A/B, theo quy tắc tie |
 
 C có survival ngắn hơn nhưng vẫn có thể được chọn. Đây là khác biệt so với deterministic Top-K theo survival. Tie giữa các resident cần quy tắc xác định để tái lập.
 
 ## 4. Phân tích Algorithm 1 từ đầu đến cuối
 
-| Dòng | Nội dung | Giải thích khi triển khai |
-|---|---|---|
-| Input, 1 | Nhận w, stream, K, WS, AS, VZ, H | H là hyperparameters của learner; thiết kế nhóm bổ sung seed cho RNG |
-| 2–5 | Khởi tạo `s=0`, reservoir R và hai mảng b, k | Mỗi entry là bộ `(snapshot, weight, priority)`; ba thành phần luôn đi cùng nhau |
-| 7–8 | Đọc từng mẫu, tính loss của w hiện tại | Tính loss trước khi mutate learner |
-| 9–10 | Khi Aggressive, kết thúc candidate và sinh u | Candidate đang xét là model trước cập nhật |
-| 11–15 | Đổi survival thành trọng số và priority | Standard dùng s; Exponential dùng exp(s) |
-| 16–18 | So priority với phần tử nhỏ nhất, thêm hoặc thay | Nếu R rỗng/chưa đầy, append; chỉ tìm minimum để thay khi đã đầy |
-| 19–20 | Cập nhật base learner | Dùng đúng quy tắc PAC hoặc FSOL, không dùng vector ensemble làm đầu vào update |
-| 21 | Reset `s=0` | Bắt đầu đếm survival của candidate mới |
-| 22–23 | Nếu Passive, tăng s | Không tạo một entry mới cho mỗi bước Passive |
-| 24–28 | Tạo vector ensemble từ R | Chọn simple hoặc weighted average |
-| 29–31 | Tùy chọn voting-based zeroing | Zero một tọa độ nếu đa số candidate có giá trị 0 ở tọa độ đó |
-| 32 | Trả vector ổn định `w_WRS` | Phân biệt với vector cuối w của learner |
+| Dòng     | Nội dung                                         | Giải thích khi triển khai                                                       |
+| -------- | ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Input, 1 | Nhận w, stream, K, WS, AS, VZ, H                 | H là hyperparameters của learner; thiết kế nhóm bổ sung seed cho RNG            |
+| 2–5      | Khởi tạo `s=0`, reservoir R và hai mảng b, k     | Mỗi entry là bộ `(snapshot, weight, priority)`; ba thành phần luôn đi cùng nhau |
+| 7–8      | Đọc từng mẫu, tính loss của w hiện tại           | Tính loss trước khi mutate learner                                              |
+| 9–10     | Khi Aggressive, kết thúc candidate và sinh u     | Candidate đang xét là model trước cập nhật                                      |
+| 11–15    | Đổi survival thành trọng số và priority          | Standard dùng s; Exponential dùng exp(s)                                        |
+| 16–18    | So priority với phần tử nhỏ nhất, thêm hoặc thay | Nếu R rỗng/chưa đầy, append; chỉ tìm minimum để thay khi đã đầy                 |
+| 19–20    | Cập nhật base learner                            | Dùng đúng quy tắc PAC hoặc FSOL, không dùng vector ensemble làm đầu vào update  |
+| 21       | Reset `s=0`                                      | Bắt đầu đếm survival của candidate mới                                          |
+| 22–23    | Nếu Passive, tăng s                              | Không tạo một entry mới cho mỗi bước Passive                                    |
+| 24–28    | Tạo vector ensemble từ R                         | Chọn simple hoặc weighted average                                               |
+| 29–31    | Tùy chọn voting-based zeroing                    | Zero một tọa độ nếu đa số candidate có giá trị 0 ở tọa độ đó                    |
+| 32       | Trả vector ổn định `w_WRS`                       | Phân biệt với vector cuối w của learner                                         |
 
 PAC trong paper là PA-II, có cập nhật:
 
@@ -112,57 +108,11 @@ $$w_{WRS}=\frac{\sum_{j=1}^{m}b_jR_j}{\sum_{j=1}^{m}b_j}\quad\text{(weighted ave
 
 Nếu bật VZ, với mỗi tọa độ d, đặt `w_WRS[d]=0` khi số candidate có `R_j[d]=0` **lớn hơn m/2**. Đây là voting về độ thưa, không phải bỏ phiếu nhãn dự đoán. Ví dụ 3 trong 4 candidate có tọa độ đó bằng 0 thì zero; 2 trong 4 không phải đa số.
 
-## 5. Training Pipeline đề xuất
+## 5. Training Pipeline và Testing/Inference Pipeline
 
-```mermaid
-flowchart TD
-    A[Dataset, config và seed] --> B[Chuẩn bị split và preprocessing]
-    B --> C[Train stream với nhãn -1/+1]
-    C --> D[Khởi tạo base learner, s=0, reservoir rỗng]
-    D --> E[Đọc mẫu train tiếp theo]
-    E --> F[Tính hinge loss bằng model hiện tại]
-    F --> G{Loss > 0?}
-    G -->|Không: Passive| H[Tăng s, giữ nguyên model]
-    G -->|Có: Aggressive| I[Tính b và priority cho model cũ]
-    I --> J[Xét thêm snapshot vào reservoir]
-    J --> L[Cập nhật base learner, reset s=0]
-    H --> M{Còn mẫu?}
-    L --> M
-    M -->|Có| E
-    M -->|Không| N[Tổng hợp reservoir theo AS và VZ]
-    N --> O[Lưu model suy luận, preprocessing và metadata]
-```
+xem ảnh cùng thư mục
 
-**Đầu vào:** learner PAC/FSOL và hyperparameters; K; WS; AS; VZ; train stream; seed. Runner quản lý split/stream, WAT quản lý RNG lấy mẫu riêng.
-
-**Luồng dữ liệu:** TV3 chuẩn bị dữ liệu và thứ tự stream; TV1 cung cấp loss/update/state của learner; TV2 bọc learner bằng WAT. WAT không tự split dataset hoặc tune hyperparameters.
-
-**Một lượt train:** tính loss → nếu Aggressive thì xét snapshot cũ vào reservoir → mới update learner → reset s. Nếu Passive chỉ tăng s. Snapshot phải là bản copy để update sau không làm đổi các vector đã lưu.
-
-**Đầu ra:** vector `w_WRS` để suy luận; metadata cấu hình và nguồn dữ liệu. Nếu cần resume, lưu thêm trạng thái learner, s, reservoir, trọng số, priority, RNG state và vị trí stream.
-
-**Theo dõi thực nghiệm:** có thể tạo ensemble tạm tại checkpoint để TV3 đo accuracy/sparsity/ROP. Việc đọc checkpoint không được thêm candidate, sinh số ngẫu nhiên hoặc thay đổi trạng thái train. Test labels chỉ đi vào module tính metrics; không dùng để chọn candidate trong WAT. Paper có protocol tuning bằng test accuracy, nên nếu tái hiện phải ghi rõ riêng theo [protocol](experiment-protocol.md); pipeline triển khai mới có thể dùng validation để tuning và test chỉ đánh giá cuối.
-
-## 6. Testing/Inference Pipeline đề xuất
-
-```mermaid
-flowchart LR
-    A[Mẫu mới hoặc X_test] --> B[Áp dụng preprocessing đã fit]
-    B --> C[Tính score bằng w_WRS]
-    C --> D[Áp dụng sign và quy tắc score bằng 0]
-    D --> E[Nhãn dự đoán -1/+1]
-    E --> F[Metrics khi có y_test]
-    G[y_test] --> F
-```
-
-1. Load vector `w_WRS`, preprocessing, feature schema và label mapping đã lưu.
-2. Transform dữ liệu mới bằng preprocessing của train; không fit lại trên test. Kiểm tra đúng thứ tự và số chiều features.
-3. Tính `scores = X @ w_WRS` và dự đoán theo dấu score. Tie khi score bằng 0 phải thống nhất với learner và ghi metadata; đề xuất `score >= 0 → +1`, còn lại `-1`, chờ đối chiếu reference.
-4. Khi đánh giá, so nhãn dự đoán với y_test để tính accuracy. Khi phục vụ dự đoán thực tế không cần nhãn thật.
-
-Inference không cập nhật learner, survival hay reservoir. Sau khi đã tổng hợp vector, chỉ cần một phép nhân tuyến tính mỗi mẫu; không cần chạy K model riêng. Nếu bật VZ, áp dụng trước khi lưu vector cuối.
-
-## 7. Các trường hợp biên cần chốt trước code
+<!-- ## 7. Các trường hợp biên cần chốt trước code
 
 | Trường hợp | Algorithm 1 thể hiện | Đề xuất / hành động cần làm |
 |---|---|---|
@@ -196,4 +146,4 @@ Các kiểm tra quan trọng cho phần code sau: đúng dấu nhưng thiếu ma
 | 20 | Testing/Inference Pipeline và phân biệt hai vector w |
 | 21 | Complexity, giới hạn và các quy ước triển khai |
 
-Lời giải thích ngắn khi thuyết trình: “Thay vì chỉ dùng model cuối cùng, WAT giữ một tập nhỏ các model trung gian. Model nào trải qua nhiều bước Passive liên tiếp sẽ được ưu tiên lấy mẫu vì đó là dấu hiệu model hoạt động tốt trên các mẫu tiếp theo. Khi dự đoán, chúng ta tổng hợp các model đã lưu thành một vector duy nhất để giảm phụ thuộc vào một lần cập nhật cuối luồng.”
+Lời giải thích ngắn khi thuyết trình: “Thay vì chỉ dùng model cuối cùng, WAT giữ một tập nhỏ các model trung gian. Model nào trải qua nhiều bước Passive liên tiếp sẽ được ưu tiên lấy mẫu vì đó là dấu hiệu model hoạt động tốt trên các mẫu tiếp theo. Khi dự đoán, chúng ta tổng hợp các model đã lưu thành một vector duy nhất để giảm phụ thuộc vào một lần cập nhật cuối luồng.” -->
