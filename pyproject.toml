@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "introml-wrs-reproduction"
+version = "0.1.0"
+description = "Group 8 full-scope reproduction framework for NeurIPS 2024 WRS/WAT"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "scikit-learn", "matplotlib", "wandb"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "scope": "full",
+  "status": "planned",
+  "decision": {
+    "by": "team_leader_TV3",
+    "date": "2026-11-12",
+    "supersedes": "core scope in original task distribution"
+  },
+  "dataset_ids": [
+    "avazu-app",
+    "avazu-site",
+    "criteo",
+    "dexter",
+    "dorothea",
+    "kdd2010-algebra",
+    "mnist8-4-9",
+    "news20",
+    "newsgroups-binary-cs",
+    "pcmac",
+    "rcv1",
+    "real-sim",
+    "sst2",
+    "url",
+    "w8a",
+    "webspam"
+  ],
+  "learners": [
+    "pac",
+    "fsol"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "train_fraction": 0.7,
+  "passes": 1,
+  "checkpoint_target": 200,
+  "include_initial_and_final_checkpoints": true,
+  "wrs": {
+    "reservoir_sizes": [
+      1,
+      4,
+      16,
+      64
+    ],
+    "weighting": [
+      "standard",
+      "exponential"
+    ],
+    "averaging": [
+      "simple",
+      "weighted"
+    ],
+    "voting_zeroing": [
+      false,
+      true
+    ]
+  },
+  "topk": {
+    "reservoir_size": 64,
+    "averaging": [
+      "simple",
+      "weighted"
+    ],
+    "details_verified": false
+  },
+  "averaging_baselines": {
+    "moving_window": 64,
+    "ema_gamma": 0.9,
+    "details_verified": false
+  },
+  "tuning": {
+    "pac_C_err": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "fsol_eta": [
+      0.125,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0,
+      64.0,
+      128.0,
+      256.0,
+      512.0
+    ],
+    "fsol_lambda": [
+      0,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "rule": "Appendix B.2: highest mean ROP within top 2.5 percent mean final test accuracy",
+    "tie_and_rounding_policy": null
+  },
+  "noise_rates": [
+    0,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "not_in_generated_manifest": [
+    "tuning",
+    "runtime_dedicated",
+    "statistics_aggregation",
+    "reference_comparison",
+    "ember_appendix_c",
+    "nonpa_appendix_e",
+    "label_noise"
+  ],
+  "wandb": {
+    "entity": null,
+    "project": "wrs-reproduction-group8",
+    "visibility_required": "public",
+    "configured": false
+  }
+}

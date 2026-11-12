@@ -1,0 +1,223 @@
+The term project of Introduction to Machine Learning asks each team to adopt one published machine learning paper and spend the semester with it. The team reads the paper until it can retell it in its own words, rebuilds the experiments to see how faithful such a rebuild can be, questions the theory where it is thin, and demonstrates the found weaknesses with experiments of its own design. The work runs as three milestones and two labs, each with its own page, and the course closes it at the final oral exam.
+
+The final oral exam
+Note
+The project ends in a final oral exam in the form of a poster workshop, rather than a seminar or a direct question answering session. Each team hangs its poster, presents the semester’s work directly from it, and answers the examiners’ questions standing next to the work the poster summarizes.
+
+The route
+The checkpoints run in the order below, each with a dedicated page. The milestones set up the knowledge, and the labs turn it into running experiments:
+
+Selecting the Paper: the team registers and claims its paper by submitting the selection form published on Moodle.
+
+Reading the Paper: the team internalizes the paper and hands the retelling in as a slide deck.
+
+Experimental Reproduction: the team reruns the paper’s experiments and measures how close its rebuild lands to the published numbers.
+
+Critical Analysis: the team critiques the theory of the paper, from its assumptions to its complexity story.
+
+Empirical Demonstration: the team demonstrates the found weaknesses empirically and compresses the whole critique into one poster.
+
+The checkpoints pair up by deliverable: the reading milestone and the reproduction lab submit together as one slide deck, and the critique milestone and the empirical-demonstration lab submit together as one poster.
+
+Logistics
+The project is a team effort. The selection form captures every member, and the confirmed paper binds its team for the rest of the semester.
+
+Each team keeps one public code repository for the entire semester. Code, notebooks, and documentation accumulate in it from the first week, and the commit history documents the progress. Everything the deck and the poster report must trace back to this repository.
+
+Submissions leave through Moodle: the selection form at the first milestone, the slide deck file and the repository link at the deck checkpoint, and the poster file at the poster checkpoint. Deadlines follow the Moodle announcements of the course.
+
+Experiments are tracked run by run on a public Weights & Biases project so that every reported number in the deck or the poster links to its run. The tracking rules live in Experimental Reproduction and apply to both labs.
+
+Grading
+Part	Weight
+The selection form	pass gate, no points of its own
+The slide deck, the reading milestone and the reproduction lab together	45%
+The poster, the critique milestone and the empirical-demonstration lab together	50%
+Tracked repository quality, W&B discipline, and artifact formatting	5%
+Total	100%
+The selection form carries no points of its own and gates the semester: a team that has not registered its paper earns no grade for the project. The final rubric row scores the working discipline around the artifacts rather than the artifacts themselves, so keep the repository readable, the experiments tracked, and the formatting of both artifacts tight.
+
+An excellent deck retells the paper precisely in the team’s own words, visualizes the method faithfully, and pins the reproduction results against the published ones with an account of every deviation, to the point that the examiners could reconstruct what the paper does without opening it. A deck that retells correctly but visualizes thinly, or reports deviations without explaining them, reads as unfinished work. An excellent poster puts a real weakness on the table, argues it theoretically, and confirms it with an experiment designed exactly for that weakness. A poster that asserts weaknesses without theory, or shows experiments disconnected from any claimed weakness, reduces the semester to unbacked opinions.
+
+Integrity and the use of AI
+Reimplement the proposed method from the paper’s description. If the paper ships a public implementation, that code serves verification and comparison only. Copying the paper’s text or its figures, copying code from the original implementation, or copying the work of another team zeros the project.
+
+As usual, AI tools are not restricted: use them wisely. They may support the writing and the coding, but every member stands behind the whole artifact at the poster workshop and explains any part of the work there. The lab instructor reserves the right to conduct additional assessments on some of the teams, should the work of a team make them needed.
+
+Each checkpoint page specifies its own deliverable: the selection form in Selecting the Paper, the slide deck in Reading the Paper, and the poster in Empirical Demonstration.
+
+Introduction to Machine Learning
+Machine Learning
+Term Project
+
+Objectives
+Every team starts the project by choosing the paper it will carry for the whole semester. The choice matters more than it looks: a good pick survives a semester of reading, rebuilding, and stress testing, and feeds every later checkpoint. This milestone has no code and no report. Its deliverable is the registration itself, and its real work is the deliberation that precedes it.
+
+The selection form
+Important
+The team registers by filling the selection form published on Moodle. Moodle is the only submission channel. Read the form carefully before you decide, because it is the full rulebook of this milestone.
+
+After the registration
+Form submissions flow into the Google Sheet linked to the form, and the instructor reviews the registrations there, accepting papers and marking the acceptances in the sheet itself. From that acceptance on, the paper binds the team for the rest of the semester, and a later change needs explicit instructor approval. Once the paper is accepted, the work moves to Reading the Paper, where the paper goes under the microscope.
+
+Objectives
+Reading a paper is more than parsing its sentences. By the end of this milestone, the team holds a working understanding it can defend without the PDF open: what problem the paper attacks, what gap it fills, what is genuinely new in its method, how the method works part by part, and how the authors evaluate it. This milestone shares its deliverable with Experimental Reproduction: the two submit together as one slide deck, where the reading supplies the retelling and the lab supplies the running experiments.
+
+The reading guide
+Work through the paper in the order below. Every element gets retold in the team’s own words, and the retelling must survive in front of an examiner who has not read the paper. Verbatim sentences out of the paper do not count as an answer. The point of the milestone is the conversion.
+
+A fast pass before the close reading
+Read the paper in the recommended order: the abstract, then the introduction, then the conclusion, then the background and related work, then the experiments, and the method last. The first three tell you what the paper promises and where it lands, and that is enough to judge early whether the paper is worth the rest of the semester. The background situates the claim among its neighbors, the experiments show whether the evidence holds up before you pay for the details, and the method, the heaviest part, reads fastest once you already know what to look for. A team that cannot say what the paper promises and where it lands after this fast pass should go back to Selecting the Paper and reconsider.
+
+Context and motivation
+The problem the paper attacks, stated plainly, with a concrete example of your own that shows why the problem matters in the real world.
+
+At least two predecessor approaches the paper builds on. For each one, state the core idea, the limitation that remains, and the practical consequence of that limitation. A limitation without its consequence is an afterthought, not an analysis.
+
+Contributions
+List the contributions in the paper’s own terms, then reorganize them by kind: theoretical contributions, technical contributions, and empirical contributions. Novelty is judged against the predecessors above: state for each contribution what exactly was not possible or not attempted before.
+
+The method
+This is the technical heart of the deck. The retelling covers five layers:
+
+Notation and the formal problem. Restate every symbol the paper uses in one consistent notation of the team’s own, and restate the problem the method solves, formally where the paper is formal.
+
+The overall pipeline. Draw the method end to end in a diagram of the team’s own making and walk the reader through the data from input to output.
+
+The components, one by one. Each component answers three questions: what it does, why the method needs it, and how it works precisely. Key formulas appear with every variable explained, and nothing on a slide floats without its meaning in the speaker notes.
+
+The theoretical properties. Restate every lemma, theorem, or proof sketch the paper claims and explain what it means in intuitive terms. A full reproduction of the proofs is not required. A working understanding of what the properties promise and where their limits sit is.
+
+Complexity. The time and space story of the method, and how it compares with the predecessors named above.
+
+The combined deliverable: the slide deck
+The reading milestone and Experimental Reproduction submit as one deck.
+
+One pptx file of at least 20 slides and at most 40 slides, counting the main story and any appendix slides alike. Fewer slides usually mean the team skipped the analysis. More slides usually mean the team copied the paper section by section.
+
+The deck is a visual artifact. It re-describes the paper visually: contributions, novelty, the gap it fills, the method, and the methodology of datasets, metrics, and protocol, each rendered as drawn figures, diagrams, and tables rather than paragraphs.
+
+Every slide carries speaker notes of at most 500 words. The notes hold the verbal analysis, the reasoning, and the connective tissue that the visuals cannot fit. Notes are read as submitted. There is no oral presentation, so the deck plus its notes are the complete artifact.
+
+Citations render in IEEE style, numbered, at the bottom of each slide that cites them. There is no separate references slide: a claim stands next to its source on the same page.
+
+All figures belong to the team. Redraw or recreate whatever the paper shows. Pasting the paper’s figures counts as copying under the integrity rules.
+
+The deck closes the story with the reproduction: the team’s results placed against the paper’s, each team number citing its W&B run, as told by Experimental Reproduction.
+
+Important
+The deck leaves through Moodle as a single pptx file under 20 MB, speaker notes included. The deck file is uploaded on its own, and the link to the team’s public tracked repository is submitted separately on Moodle as its own entry. A deck above the size limit or a missing repository link renders the checkpoint unsubmitted until it is fixed.
+
+How the deck gets read
+The examiners open the deck, read it slide by slide against the speaker notes, and check the retelling against the paper where the retelling makes claims. A deck that restates the paper earns little. A deck that shows the team understood, drew it, and tested it earns the milestone. Slides that dump raw source code fail the visual requirement, and slides without speaker notes count as incomplete.
+Objectives
+Reproduction checks how faithful a rebuild can be. The team rebuilds the paper’s experiments from what the paper reports, runs them for real, and compares its measured numbers against the published ones. The point is not to match the numbers perfectly. The point is to say precisely how far the rebuild landed and why. That deviation analysis is where a deep understanding of the method shows, and it feeds the results section of the deck submitted with Reading the Paper.
+
+Choosing the scope
+Important
+The team picks one of two scopes and states the choice and its reasoning in the deck:
+
+Full scope: all main experiments reported in the paper, on the same or equivalent datasets.
+
+Core scope: the two most important experiments at minimum, including the headline comparison of the paper, with the rest replaced by one additional analysis the team designs itself, such as a sensitivity sweep over the configuration the paper varies.
+
+The scope is a judgment call the team owns. A sprawling paper with heavy experiments justifies the core scope, and the additional analysis then carries the weight of the missed experiments.
+
+The rules of implementation
+Reimplement from the paper’s description only. If the paper ships a public implementation, that code exists for verification and comparison: the team may read it, run it, and compare outputs against it, but never copy from it into its own code, and never submit it as its own work.
+
+Reuse is allowed for everything around the method: existing libraries, standard implementations, and public tooling may serve the auxiliary parts of the pipeline, such as data loaders, metrics, and standard model blocks. The paper’s core contribution stays implemented and understood by the team, and every reuse is documented and cited in the README.
+
+Python 3.9 or newer, with the standard scientific stack: numpy, scipy, scikit-learn, and torch, tensorflow or jax where the paper needs deep learning. Anything outside the standard stack gets justified in the README.
+
+Fix the random seeds, document them, and keep the runs repeatable, so any run can be redone.
+
+Every important function carries a docstring stating purpose, parameters, and return value. The README explains how to set up and run everything.
+
+Running and tracking the experiments
+Note
+Experiments run on the platform the team chooses: cloud instances, hosted notebooks, or the team’s own hardware. What counts is that the runs are real, finished, and documented, and that the tracked repository carries everything.
+
+Every experiment lands in one public Weights & Biases project, the experiment tracking platform at https://wandb.ai. The platform records the configuration, the metrics, and the plots of every run, so the deck can cite the team’s numbers run by run rather than as bare claims. W&B is the short name from here on.
+
+The repository README carries the mapping table: for each experiment, the notebook or script that produced it, the W&B link to the run, and one line on what the run shows.
+
+Datasets load programmatically from hosted sources. The experiments read their data during the run from Hugging Face or Kaggle, and the dataset-preparation code in the notebook or script downloads and reconstructs the working structures itself. This replaces manual preparation, so a run works end to end from one place. Prefer the datasets that are already public on those two platforms over fresh uploads. When no public copy of what the paper uses exists, the team prepares the dataset itself and uploads it to its own Hugging Face or Kaggle dataset, so the programmatic workflow still runs end to end.
+
+What the results must contain
+The comparison against the paper. Choose whichever figure form fits the experiment: a table, a chart or a curve, or a qualitative input-output pair. The paper’s number and the team’s number stand side by side, and the relative deviation appears wherever numbers apply.
+
+The deviation analysis. Every gap worth noticing gets explained: configuration the paper left unstated, library and version differences between the paper’s environment and the team’s, the effect of random initialization, and hardware realities. This is the part that separates a run from an understanding.
+
+The original-code comparison. When the paper ships code, the team runs it, compares its outputs against the team’s rebuild, and localizes where the two pipelines diverge. Such a comparison often surfaces bugs and problems in the original implementation that the team identified and fixed in its own rebuild, and a deviation explained by one of these findings is usually the most insightful part of the reproduction.
+
+Where it lands
+The reproduction lands in two places. The results section of the shared deck from Reading the Paper presents the comparison against the paper and the deviation analysis, with each team number citing its W&B run. The tracked repository holds the implementation, the notebooks, and the branch history that produced them. Commit early and often: the history is on show, and it is the record of how the work happened.
+
+Objectives
+After reading and rebuilding, the team knows how the method works and what its experiments show. Now the team separates the claims from the evidence. This milestone critiques the theory only: the assumptions the method stands on, the soundness of its claims, the formulation of its problem, and the reality of its complexity story. Where the critique finds a weakness, the job of demonstrating it empirically belongs to Empirical Demonstration.
+
+What deserves scrutiny
+Hidden assumptions
+Every method assumes something about the world it runs in. Find them: the shape of the data distribution the theory expects, independence or structure assumptions over features or nodes, the availability of full data or labels at training time, the smoothness the optimization silently requires, the computation model that hides cost the hardware eventually pays. For each assumption, ask how often the real data satisfies it and what happens when it does not.
+
+A few textbook assumptions show what to look for. Naive Bayes assumes the features are conditionally independent given the class, and its long service in document classification shows how far that assumption carries and where it stops. Ordinary least squares assumes the errors share one constant variance and stay uncorrelated with the features, which is the Gauss-Markov ground the closed-form solution and its guarantees stand on. Empirical risk minimization assumes the data arrives independently from the same distribution the model will meet in use, so a shift between training data and serving data breaks the promise that the measured risk estimates the real risk. Each of these is a falsifiable claim about the world, which is what makes an assumption worth naming and testing.
+
+Soundness of the claims
+Take the lemmas, theorems, and stated properties from Reading the Paper and test them against their proof. Do they hold as written? Are the conclusions conditioned on hypotheses the paper mentions only in passing, somewhere in a remark?
+
+Distinguish the claims the experiments actually support from the claims they merely accompany. A strong benchmark table does not prove every sentence in the introduction.
+
+The formulation and the objective
+Would the objective capture the goal the paper advertises? Methods optimize what is formalized, and the formalization can drift away from the intent. Look for shortcuts: surrogates standing in for the real target, regularizers whose side effects the theory ignores, losses that admit degenerate solutions.
+
+Complexity and generality
+The complexity story retold in Reading the Paper claims growth rates under assumptions. Question them: are the claimed rates competitive in the regimes the experiments actually occupy, or only in the regime where the method wins?
+
+Question the generalization the paper sells: how far does the method stretch beyond the settings it was evaluated on, and what in the theory supports that stretch?
+
+The shape of the analysis
+The analysis exists as content for two artifacts. Its theoretical arguments go to the theoretical side of the poster built with Empirical Demonstration, and its substance must satisfy three floors:
+
+at least three strengths of the method, each argued with evidence from the reading or from the reproduction rather than asserted.
+
+at least two limitations the paper leaves unanswered, each argued, each a theoretical limitation, and each stated so plainly that an experiment could be designed against it.
+
+at least two future directions the paper opens, each tied closely to one of the two limitations above, so each direction reads as the answer to a named weakness.
+
+A limitation argued here and demonstrated there makes the poster’s strongest axis, and the critique keeps its value even for papers the team likes: praise argued with evidence scores the same as criticism argued with evidence. When the critique ends up with more weaknesses proven than a poster can hold, the rule in Empirical Demonstration decides which two reach the poster and where the remaining ones are described.
+bjectives
+The team designs and runs experiments in which the weaknesses found in Critical Analysis become measurable facts, and then compresses the whole critique, theoretical and empirical, into the single poster that the poster workshop grades.
+
+Designing the demonstration experiments
+Pick the families that fit the weaknesses on the table. The menu below suggests the shapes that usually land:
+
+Assumption-violating data. Build or pick inputs that break the assumptions the critique found, and measure what the method’s quality does as the assumption bends. A degradation curve in front of a stated assumption says more than pages of prose.
+
+Adversarial and out-of-distribution settings. Push the method past the regimes its evaluation covered, and show where its behavior changes.
+
+Component ablations. Remove or degrade the pieces the theory credits the method’s properties to, and watch which properties survive.
+
+Replacement baselines. Swap a credited component for a plainer alternative and check whether the theory’s claim of necessity holds up.
+
+Scaling runs. Confront the complexity claims with wall-clock reality at sizes the theory says something about.
+
+Sensitivity sweeps. Vary one configuration knob at a time to expose how brittle the method is to a factor the paper treated as settled.
+
+The implementation and tracking rules of Experimental Reproduction hold here in full: reimplement from the description, fixed documented seeds, runs on the platform the team chooses, every run tracked. Use the same public W&B project and tag the runs of this lab separately, so the two labs stay distinguishable at a glance.
+
+The poster
+Important
+The poster is one pptx file containing a single slide in the form factor of portrait A2.
+
+It illustrates the issues the team found. The theoretical analysis sits next to its empirical demonstration, wired to it: an argued weakness with its measured evidence, issue by issue.
+
+When more than two weaknesses end up proven both theoretically and empirically, the team selects the two most notable ones for the poster. The remaining proven weaknesses are described in the README.md of the tracked repository, next to their evidence.
+
+The team’s empirical numbers cite their W&B runs. Claims that trace to nothing visible count as unbacked.
+
+The poster leaves through Moodle as a single file.
+
+At the workshop, the final oral exam, the team presents directly from its poster and answers the examiners’ questions there.
+
+The single page is the discipline: the poster must fit on one portrait A2 page, and it carries the issues that matter with the evidence that shows them. The deck already told the full story. The poster is the distilled argument, and the workshop is where the team defends it in the open.

@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "path": "docs/requirements/project_description.txt",
+      "original_filename": "project_description.txt",
+      "sha256": "2f2c7293dad60b239c4536bf76ac31c68d4dee358b0d5e779e74e810e3717b72",
+      "imported_on": "2026-11-12",
+      "source": "provided_by_team_leader"
+    },
+    {
+      "path": "docs/requirements/task_distribution.txt",
+      "original_filename": "task_distribution.txt",
+      "sha256": "f13aacdd66cfe71aadca0924be099d3e6768ffb18ec32668063bcedc027b4fdd",
+      "imported_on": "2026-11-12",
+      "source": "provided_by_team_leader"
+    },
+    {
+      "path": "papers/wrs-neurips2024.pdf",
+      "original_filename": "NeurIPS-2024-stabilizing-linear-passive-aggressive-online-learning-with-weighted-reservoir-sampling-Paper-Conference.pdf",
+      "sha256": "64cc98acc25e52fcf05d951ebfbbc25aaa86c0022cd232beef3bcaf7c950026e",
+      "imported_on": "2026-11-12",
+      "source": "provided_by_team_leader"
+    }
+  ]
+}

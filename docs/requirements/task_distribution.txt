@@ -1,0 +1,300 @@
+﻿https://github.com/TienManhHuynh/IntroML-StudyingAboutWRSpaper
+Thành viên[a]
+	Vai trò
+	Công việc chính
+	Nguyên
+	Background, Theory & Base Learners 
+	Nghiên cứu nền tảng lý thuyết, Related Work, Research Gap; hiện thực PAC và FSOL gốc 
+	Tùng
+	Proposed Method & WAT Implementation 
+	Nghiên cứu WRS/WAT, hiện thực Algorithm 1, xây dựng Training và Inference Pipeline 
+	TV3
+	Experimental Reproduction & Evaluation 
+	Chuẩn bị dataset, xây dựng hệ thống chạy thí nghiệm, tính metrics, W&B và phân tích kết quả 
+	
+
+PHÂN CÔNG CHI TIẾT 
+TV1 — Background, Theory & Base Learners
+1. Nghiên cứu paper: DL: 11/11
+* Giải thích Research Problem, Motivation và ứng dụng thực tế.
+* Nghiên cứu ít nhất 2 predecessor approaches; xác định Research Gap.
+* Phân loại Theoretical, Technical và Empirical Contributions.
+* Trình bày PAC, PA-II, FSOL và các công thức cập nhật.[b]
+
+
+DL: 13/11
+* Giải thích ý nghĩa và giả định của các Theorem 1–4.
+* Phân tích độ phức tạp của các thuật toán nền tảng.
+2. Công việc lập trình: 
+* Hiện thực thuật toán PAC (PA-II).
+* Hiện thực thuật toán FSOL.
+* Viết unit tests cho hai thuật toán.
+* Chuẩn hóa giao diện chung để TV2 sử dụng, gồm loss(), update() và get_weights().
+3. Slide phụ trách
+Slides 1–10 và 19–21:
+* Title, Problem, Motivation.
+* Related Work, Research Gap, Contributions.
+* Background PAC/FSOL và notation.
+* Theoretical Properties, Assumptions, Complexity.
+4. Deliverables
+Code
+src/models/pac.py
+src/models/fsol.py
+tests/test_pac.py
+tests/test_fsol.py
+TV2 — Proposed Method & WAT Implementation
+1. Nghiên cứu paper: DL: 11/11
+* Giải thích Weighted Reservoir Sampling (WRS).
+* Giải thích Survival Time và lý do chọn trọng số dựa trên số bước Passive.
+* Phân tích Algorithm 1 từ đầu đến cuối.
+* Thiết kế Training Pipeline và Testing/Inference Pipeline.[c]
+
+
+DL: 13/11
+* Giải thích các biến thể: Standard/Exponential Weighting, Simple/Weighted Averaging, Voting-based Zeroing.
+* Phân tích chi phí thời gian, bộ nhớ phát sinh do WAT.
+2. Công việc lập trình
+* Hiện thực Weighted Reservoir Sampling với bộ nhớ tối đa K ứng viên.
+* Hiện thực WAT sử dụng giao diện Base Learner từ TV1.
+* Xử lý việc lưu trọng số trước khi base learner cập nhật.
+* Hiện thực averaging và voting-based zeroing.
+* Viết unit tests cho reservoir, sampling và WAT.
+3. Slide phụ trách[d]
+Slides 11–18:
+* Tổng quan WAT.
+* Training Pipeline.
+* Inference Pipeline.
+* Survival Time.
+* Weighted Reservoir Sampling.
+* Algorithm 1.
+* Sampling/Averaging Variants.
+* Giải thích cách tạo mô hình ensemble.
+4. Deliverables
+Code
+src/wat/reservoir.py
+src/wat/wat.py
+tests/test_reservoir.py
+tests/test_wat.py
+
+
+TV3 — Experimental Reproduction & Evaluation
+1. Nghiên cứu paper: DL: 11/11
+* Phân tích Section 4 — Numerical Experiments.
+* Xác định datasets, baselines, metrics và protocol.
+* Xây dựng kế hoạch Core Scope với ít nhất 2 thí nghiệm chính và một additional analysis.
+* Hiểu cách tính ROP, final accuracy, final sparsity.
+* So sánh kết quả nhóm với paper và phân tích nguyên nhân sai lệch.[e]
+2. Công việc lập trình: DL: 14/11
+* Viết module tải dataset và preprocessing.
+* Viết các hàm đánh giá Accuracy, ROP, Sparsity.
+* Viết experiment runner cho các thuật toán do TV1 và TV2 cung cấp.
+* Thiết lập W&B, fixed seeds, checkpoint evaluation.
+* Chạy PAC vs PAC-WRS và FSOL vs FSOL-WRS.
+* Thiết kế additional analysis về ảnh hưởng của label noise.
+* Xuất bảng, đồ thị và kết quả có thể tái lập.[f]
+3. Slide phụ trách
+Slides 22–30:
+* Dataset và preprocessing.
+* Experimental Protocol.
+* Metrics, Baselines và Hyperparameters.
+* PAC/PAC-WRS Reproduction.
+* FSOL/FSOL-WRS Reproduction.
+* Additional Analysis.
+* Paper vs Reproduced Results.
+* Deviation Analysis.
+* Conclusions và giới hạn thực nghiệm.
+4. Deliverables
+Code
+src/data/loader.py
+src/evaluation/metrics.py
+experiments/run_reproduction.py
+experiments/run_noise_analysis.py
+
+
+
+
+SLIDE CONTRACT — QUY CHUẨN BẮT BUỘC CHO CẢ NHÓM
+Mục tiêu: Slide ít chữ nhưng đủ ý, có minh họa đúng thuật toán, đọc được ở kích thước trình chiếu và không phát sinh lỗi chữ/ảnh đè nhau. Quy định dưới đây tách rõ yêu cầu từ đề bài và tiêu chuẩn nội bộ nhóm.
+Yêu cầu từ giảng viên (Bắt buộc)
+* G1 — Số lượng và kích thước slide
+   * 01 file PPTX gồm 20–40 slides (tính cả appendix), dưới 20 MB.
+   * Tiêu chí nghiệm thu: Deck cuối có số slide hợp lệ và được kiểm tra kích thước.
+* G2 — Slide phải trực quan
+   * Slide là sản phẩm trực quan: hình tự vẽ, sơ đồ và bảng thay cho đoạn văn dài.
+   * Không có slide dồn thành các đoạn văn hoặc chứa block source code thô.
+* G3 — Speaker Notes
+   * Mỗi slide có speaker notes tối đa 500 từ.
+   * Notes phải chứa phần lập luận, phân tích và kết nối nội dung.
+   * Không để trống notes; số từ phải được kiểm tra trên từng slide.
+* G4 — Trích dẫn nguồn
+   * Trích dẫn IEEE dạng [1], [2],... tại chân slide có sử dụng nguồn.
+   * Không làm slide References riêng.
+   * Các claim, bảng, số liệu và định lý đều phải truy ngược được nguồn ngay tại slide liên quan.
+* G5 — Hình minh họa
+   * Tất cả hình do nhóm tự vẽ hoặc tái dựng.
+   * Không sao chép hình trực tiếp từ paper.
+   * Có source hình/sơ đồ để chỉnh sửa hoặc mã tạo plot; nguồn ý tưởng phải được trích dẫn.
+* G6 — Nội dung Reading
+   * Phải có notation, pipeline từ đầu vào đến đầu ra, từng component (what/why/how), theory và complexity.
+   * Các công thức phải có giải nghĩa.
+   * Phải trình bày cả Training Pipeline và Inference Pipeline theo phản hồi của giảng viên.
+* G7 — Nội dung Reproduction
+   * Trình bày kết quả paper so với kết quả nhóm.
+   * Phân tích deviation (sai lệch giữa kết quả tái hiện và paper gốc).
+   * Mỗi số liệu của nhóm phải gắn với W&B run.
+   * Đồ thị và bảng phải được tạo từ kết quả chạy thực tế.
+   * Các W&B links phải hoạt động.
+Nguồn: project_description.txt, mục "The combined deliverable: the slide deck" và "How the deck gets read"; phản hồi của giảng viên về Training & Inference Pipeline.
+ Style & bố cục thống nhất — Contract nội bộ
+* Kích thước & bố cục
+   * Tỷ lệ slide 16:9.
+   * Căn lề an toàn tối thiểu 0.4 inch.
+   * Sử dụng chung theme, font, bảng màu và lưới căn chỉnh.
+   * Lỗi bị trả lại: Tiêu đề, hình hoặc citation sát mép; lệch hàng; không đồng bộ.
+* Lượng chữ trên slide
+   * Mỗi slide chỉ tập trung vào 01 thông điệp chính.
+   * Gợi ý 3–5 bullet points ngắn hoặc một diagram/bảng chính.
+   * Các phần giải thích dài phải đưa vào speaker notes.
+   * Lỗi bị trả lại: Đoạn văn dài, chữ nhỏ để nhét nội dung, bảng quá nhiều chữ không thể đọc.
+* Cỡ chữ (khuyến nghị nội bộ)
+   * Title: 28–36 pt.
+   * Nội dung: 20–26 pt.
+   * Label/Axis: 16–20 pt.
+   * Citation: 11–13 pt, với điều kiện vẫn đọc được.
+   * Lỗi bị trả lại: Chữ nội dung chính dưới 18 pt, chữ nhãn hoặc trục mờ, quá bé hoặc bị co méo.
+* Hình ảnh & sơ đồ
+   * Ưu tiên vector hoặc shapes có thể chỉnh sửa.
+   * Tự vẽ lại đồ thị, pipeline và công thức.
+   * Chữ trong hình phải đủ lớn và dễ đọc.
+   * Lỗi bị trả lại: Ảnh chụp từ paper, chart bị crop, mũi tên không rõ chiều, biểu đồ không có legend.
+* Công thức
+   * Chỉ giữ những công thức quan trọng.
+   * Phải có chú thích cho các ký hiệu.
+   * Giải thích ý nghĩa trực quan (intuition) của công thức ngay trên slide hoặc trong speaker notes.
+   * Lỗi bị trả lại: Công thức không giải nghĩa ký hiệu, ảnh chụp công thức mờ.
+* Tương phản & màu sắc
+   * Nền sáng hoặc tối phải được sử dụng nhất quán.
+   * Màu sắc có vai trò cố định, ví dụ: Base / WAT / Evaluation.
+   * Không sử dụng quá 3 màu trong một hình.
+   * Lỗi bị trả lại: Nền và chữ thiếu tương phản; mỗi thành viên sử dụng một style khác nhau.
+* Không overlap
+   * BẮT BUỘC không có chữ đè chữ.
+   * Không text overflow.
+   * Không hình ảnh che nội dung chữ.
+   * Không citation bị che khuất.
+   * Bất kỳ lỗi overlap hoặc clipping nào đều phải trả lại người phụ trách để sửa.
+Content contract của mỗi slide
+Mỗi slide phải đảm bảo đầy đủ các thành phần sau:
+* Slide Title
+   * Là một phát biểu có ý nghĩa.
+   * Ví dụ: "WRS reduces accuracy fluctuations".
+   * Không đặt tiêu đề chung chung như "Results".
+* Main Visual
+   * Có hình, bảng, flowchart hoặc công thức trực quan đúng trọng tâm.
+   * Mọi nhãn, trục và đơn vị phải rõ ràng.
+* Takeaway
+   * Có kết luận ngắn gọn 1–2 dòng.
+   * Kết luận phải phù hợp với bằng chứng.
+   * Tránh diễn giải vượt quá kết quả paper.
+* Source
+   * Nguồn ghi ở chân slide theo chuẩn IEEE.
+   * Nếu là kết quả của nhóm, phải ghi W&B run/link.
+* Speaker Notes
+   * Giải thích theo cấu trúc: What → Why → How.
+   * Với kết quả thực nghiệm: Kết quả → Lý do → Giới hạn.
+   * Không quá 500 từ.
+   * Không sao chép nguyên văn từ paper.
+* Editable & Quality Assurance (QA)
+   * File PPTX phải chỉnh sửa được.
+   * Các hình tự vẽ phải có source.
+   * Kiểm tra slide ở chế độ Slide Show với mức hiển thị 100%.
+________________
+
+
+ SLIDE CONTRACT THEO TỪNG THÀNH VIÊN
+Nguyên tắc phân công
+* KHÔNG OVERLAP: Mỗi thành viên chịu trách nhiệm đúng dải slide được giao.
+* Người khác chỉ được nhận xét hoặc đánh dấu lỗi; người phụ trách chính phải tự sửa.
+* TV3 chỉ ghép file cuối theo cấu trúc chung.
+* TV3 không được tự ý sửa nội dung học thuật của TV1/TV2 khi chưa có sự thống nhất.
+TV1 — Background, Theory & Base Learners
+Dải slide phụ trách: Slides 01–11
+* Problem.
+* Motivation.
+* Ít nhất 2 Predecessor Approaches.
+* Research Gap.
+* Contributions.
+* Formalism.
+* PAC/FSOL.
+* Theorems Intuition.
+Yêu cầu trình bày bắt buộc:
+* Có ví dụ Motivation do nhóm TỰ tạo.
+* Có bảng so sánh: Prior Method → Limitation → Consequence.
+* Các công thức PAC/FSOL phải có giải thích ký hiệu.
+* Các định lý phải được trình bày kèm giả định và ý nghĩa.
+* Không chỉ dừng ở việc đưa ra công thức hoặc chứng minh.
+Bàn giao: Deadline 15/11
+* File slides/tv1_background_theory.pptx.
+* Speaker notes đầy đủ.
+* Trích dẫn nguồn theo chuẩn IEEE.
+TV2 — Proposed Method & WAT Implementation
+Dải slide phụ trách: Slides 12–21
+* Survival Time.
+* Weighted Reservoir Sampling (WRS).
+* WRS-Augmented Training (WAT).
+* Algorithm 1.
+* Training Pipeline.
+* Inference/Testing Pipeline.
+* WAT Variants.
+* Ensemble.
+* Complexity.
+Yêu cầu trình bày bắt buộc:
+* Có đầy đủ hai luồng Training và Inference/Testing.
+* Sơ đồ thể hiện rõ Input và Output.
+* Giải thích chính xác hai trạng thái Passive và Aggressive.
+* Phân biệt rõ vector trọng số hiện tại (w_t) và vector trọng số tổng hợp (w_{WRS}).
+* Giải thích chức năng của từng component trong phương pháp.
+* Các hình minh họa, pipeline và sơ đồ phải được tự vẽ, có thể chỉnh sửa.
+Bàn giao: Deadline 15/11
+* File slides/tv2_method.pptx.
+* Các hình minh họa ở định dạng có thể chỉnh sửa.
+* Speaker notes đầy đủ.
+TV3 — Experimental Reproduction & Evaluation
+Dải slide phụ trách: Slides 22–30
+* Datasets.
+* Evaluation Metrics.
+* Experimental Protocol.
+* Core Scope.
+* PAC/FSOL Results.
+* Additional Analysis.
+* Deviations.
+Yêu cầu trình bày bắt buộc:
+* Có bảng so sánh kết quả Paper vs Reproduction và độ lệch.
+* Trình bày Accuracy Curve, ROP và Sparsity.
+* Các biểu đồ phải có trục, nhãn và legend rõ ràng.
+* Ghi rõ seed, train/test split và reservoir size (K).
+* Tất cả số liệu thực nghiệm của nhóm phải có W&B link để đối chiếu.
+* Không tự tạo hoặc bịa số liệu khi chưa có kết quả thực nghiệm.
+Bàn giao: Deadline 15/11
+* File slides/tv3_experiments.pptx.
+* W&B references.
+* Speaker notes đầy đủ.
+________________
+
+
+Quy định nghiệm thu cuối cùng
+* Mỗi thành viên hoàn thành và bàn giao đầy đủ dải slide của mình trước ngày 15/11/2026.
+* Tất cả slide phải tuân thủ Slide Contract ở Mục 07.
+* Các slide phải đồng nhất về theme, font, màu sắc và bố cục.
+* Không được có lỗi overlap, clipping hoặc tràn nội dung.
+* Mọi slide phải có speaker notes và nguồn trích dẫn khi sử dụng tài liệu tham khảo.
+* Từ ngày 16–20/11: Ghép slide, kiểm tra nội dung, sửa lỗi và chuẩn bị bản nộp cuối.
+* Deadline chính thức: 21/11/2026.
+
+
+[a]AE chọn role 1 hoặc 2 đi, tui role 3 để tổng hợp lại phần của 2 tv
+[b]Deadline 11/11
+[c]Pipeline phải vẽ ra nha
+[d]Yêu cầu slide phải như nào, chỉ ảnh, ít chữ, trình bày như nào như nào. Chứ để chữ không là say no
+[e]Đợi phần của 2 tv còn lại
+[f]Deadline 14/11
