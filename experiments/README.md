@@ -1,11 +1,12 @@
-# Runners cần triển khai
+# Experiment runners trên tv3
 
-| Script dự kiến | Trách nhiệm |
+| Script | Trách nhiệm / trạng thái |
 |---|---|
-| `run_reproduction.py` | Tuning, baseline và MAIN WRS |
-| `run_ablations.py` | Top-K, moving/EMA, benchmark |
-| `summarize_results.py` | Curves, tables, win count, Wilcoxon, deviations |
-| `compare_reference.py` | Code tác giả ở môi trường tách biệt |
-| `run_noise_analysis.py` | Noise bổ sung |
+| `run_reproduction.py` | Paired baseline/WRS trial; WRS nhận factory thật từ TV2 |
+| `run_tuning.py` | Grid B.2, 5 trials/config và lựa chọn tham số |
+| `run_ablations.py` | Chưa triển khai; cần wrappers tương ứng từ nhóm |
+| `summarize_results.py` | Grouped measured summaries và native-source plots |
+| `compare_reference.py` | CSV comparison helper; code tác giả phải được chạy riêng |
+| `run_noise_analysis.py` | Train-only label noise, paired masks |
 
-Các script trên chưa tồn tại; không có runner giả trả thành công. Xem `docs/full-scope.md` cho EMBER/NONPA. `scripts/plan_experiments.py` chỉ lập kế hoạch, không chạy thuật toán.
+Baseline development và noise/tuning smoke đã chạy thật, xem [hướng dẫn](../docs/tv3-running.md). Chưa chạy WRS/full paper/reference implementation. `scripts/plan_experiments.py` vẫn chỉ lập kế hoạch, không chạy thuật toán.

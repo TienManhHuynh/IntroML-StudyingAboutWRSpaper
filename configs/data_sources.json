@@ -1,0 +1,17 @@
+{
+  "sst2": {
+    "repo_id": "stanfordnlp/sst2",
+    "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "filename": "data/train-00000-of-00001.parquet",
+    "format": "text_parquet",
+    "text_column": "sentence",
+    "label_column": "label",
+    "label_mapping": {
+      "0": -1,
+      "1": 1
+    },
+    "vectorizer": {},
+    "notes": "Public HF training asset has 67349 rows versus paper Table 1 67337. CountVectorizer train-only fitting and this row-count difference must be reported; this is not yet a paper-equivalent dataset claim.",
+    "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09"
+  }
+}

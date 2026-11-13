@@ -1,5 +1,7 @@
 # Slide bàn giao
 
+Trên nhánh tv3 đã có [bản nháp 9 slide TV3](tv3_experiments_draft.pptx), dùng baseline SST-2 development thực tế, có notes và tables/charts native. Chưa có kết quả WRS/public W&B/full reproduction, nên **chưa phải PPTX nghiệm thu cuối**. Source builder: `scripts/build_tv3_slides.mjs`; hướng dẫn và giới hạn trong [TV3 running](../docs/tv3-running.md).
+
 Deck cuối 20-40 slides kể cả appendix, dưới 20 MB. Mỗi slide có notes <=500 từ; citation IEEE chân slide; không References riêng. Hình tự vẽ, cùng theme 16:9; QA overlap/clipping trong Slide Show.
 
 | Slides | Chủ sở hữu | File bàn giao |

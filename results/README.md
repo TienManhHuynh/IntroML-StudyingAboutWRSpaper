@@ -1,3 +1,3 @@
 # Kết quả và coverage
 
-Chưa có measured results. `coverage.csv` là sổ kế hoạch; W&B để trống tới khi có run thật. `plans/` và `raw/` được gitignore. Commit bảng tổng hợp nhỏ/run index/deviations có provenance sau khi chạy. Không lấy số paper điền thành số nhóm.
+Có measured **development baseline results** trong [sst2-baseline](development/sst2-baseline/README.md), không phải paper reproduction. Chưa có WRS/public W&B. `coverage.csv` giữ rõ trạng thái chưa hoàn tất; `plans/` và `raw/` được gitignore. Evidence nhỏ đã copy vào development, không chứa raw features. Không lấy số paper điền thành số nhóm.

@@ -44,7 +44,7 @@ IntroML-StudyingAboutWRSpaper/
 └── slides/                           Outline và PPTX bàn giao
 ```
 
-**Trên `main` hiện có khung dự án.** PAC/FSOL và tests nằm trên nhánh TV1, chưa merge; TV2 có tài liệu và hai ảnh pipeline trên nhánh riêng, chưa có code WAT. Chưa có kết quả reproduction hoặc W&B run public trong repo. Xem [review ngày 14/11/2026](docs/reviews/tv1-tv2-2026-11-14.md).
+**Nhánh `tv3`:** đã tích hợp PAC/FSOL của TV1, triển khai loader/metrics/runners/tuning/noise/tracking và xuất kết quả. Có 10 baseline development runs trên 600 mẫu SST-2, cùng bản nháp 9 slide TV3. Chưa có WAT TV2, Full-scope reproduction hay W&B run public. Xem [hướng dẫn chạy TV3](docs/tv3-running.md) và [review ngày 14/11/2026](docs/reviews/tv1-tv2-2026-11-14.md).
 
 ## Mở nhanh
 
@@ -52,6 +52,7 @@ IntroML-StudyingAboutWRSpaper/
 - [Yêu cầu môn](docs/requirements/project_description.txt) · [PDF phân công và slide contract](docs/requirements/course-project.pdf)
 - [Checklist nộp bài](docs/project-checklist.md) · [Outline slide](slides/README.md)
 - [Phân công nhóm](docs/task-plan.md) · [TV3 cần làm gì](docs/tv3-tasks.md)
+- [Chạy code TV3 và thiết lập W&B](docs/tv3-running.md) · [Slide TV3 bản nháp](slides/tv3_experiments_draft.pptx)
 - [Kế hoạch đầy đủ](docs/full-scope.md) · [Protocol thực nghiệm](docs/experiment-protocol.md)
 - [Hướng dẫn đóng góp](CONTRIBUTING.md) · [Review TV1 / TV2](docs/reviews/tv1-tv2-2026-11-14.md)
 
@@ -61,9 +62,9 @@ Nguồn bài: [NeurIPS proceedings](https://proceedings.neurips.cc/paper_files/p
 
 | Thành viên | Vai trò | Trạng thái đã kiểm tra ngày 14/11/2026 |
 |---|---|---|
-| Nguyên / TV1 | Background, theory, PAC / FSOL; slides 01-11 | Có code, tài liệu và 4 tests pass trên nhánh TV1; cần bổ sung kiểm tra dữ liệu không hữu hạn, hoàn thiện PPTX và tích hợp |
+| Nguyên / TV1 | Background, theory, PAC / FSOL; slides 01-11 | Code PAC/FSOL đã tích hợp vào tv3, 4 tests pass; loader TV3 chặn non-finite input; PPTX vẫn chờ bàn giao |
 | Tùng / TV2 | WRS / WAT, training / inference; slides 12-21 | Có tài liệu và 2 PNG; thiếu reservoir/WAT, tests, source hình chỉnh sửa và PPTX |
-| TienManhHuynh / TV3 | Dữ liệu, metrics, experiments, W&B; slides 22-30; tích hợp | Có kế hoạch/protocol; loader, metrics, runners và kết quả chưa triển khai |
+| TienManhHuynh / TV3 | Dữ liệu, metrics, experiments, W&B; slides 22-30; tích hợp | Đã có pipeline và baseline development; W&B offline đã kiểm chứng, slide nháp có notes; còn Full scope và public runs |
 
 [Nhánh TV1](https://github.com/TienManhHuynh/IntroML-StudyingAboutWRSpaper/tree/TV1-Background-Theory-and-Base-Learners) · [Nhánh TV2](https://github.com/TienManhHuynh/IntroML-StudyingAboutWRSpaper/tree/TV2-Proposed-Method-and-WAT-Implementation). Tests pass trên snapshot TV1 không có nghĩa WAT hay reproduction đã hoàn tất. Dải slide theo contract cuối; bản phân công còn cách chia cũ cần nhóm thống nhất.
 
@@ -93,32 +94,32 @@ python scripts/plan_experiments.py
 
 Hai script hiện có chỉ kiểm tra tài liệu/cấu hình và sinh **kế hoạch**, không tải data, train hoặc log W&B. Muốn xuất manifest: `python scripts/plan_experiments.py --output results/plans/full_scope.jsonl`; lệnh từ chối ghi đè. Tuning và các mục chưa có trong manifest được theo dõi riêng trong coverage.
 
-Trên nhánh TV1 đã được review, chạy tests từ gốc nhánh bằng `python -m unittest discover -s tests -p "test_*.py" -v`. Lệnh này trên `main` hiện chưa kiểm thử PAC/FSOL vì code/tests chưa merge. Tham khảo snapshot và môi trường trong review.
+Trên `tv3`, chạy toàn bộ kiểm thử bằng `python -m pytest -q` (gồm tests TV1 và TV3). Tests không cần dữ liệu mạng hoặc tài khoản W&B. Chạy baseline hosted: `python experiments/run_reproduction.py --dataset sst2 --max-samples 600 --learner pac --output results/raw/my-pac-42`. Đây là development subset, không phải reproduction đầy đủ.
 
 NumPy/SciPy/scikit-learn phục vụ scientific stack; Matplotlib tạo đồ thị; W&B phục vụ yêu cầu tracking của môn. Chưa có environment lock cho reproduction: phải ghi phiên bản thật và commit SHA của từng run.
 
 ## Dataset và input/output
 
-`configs/datasets.json` lưu thông tin **16 dataset từ Table 1 của paper**, không phải dữ liệu nhóm đã tải. Hosted source/revision còn để null khi chưa xác minh. Runner cần tự tải/reconstruct từ Hugging Face hoặc Kaggle theo yêu cầu môn; không commit raw data.
+`configs/datasets.json` lưu **16 dataset Table 1**. `configs/data_sources.json` đã pin SST-2 HF source/revision/checksum; 15 dataset khác còn thiếu nguồn xác minh. Loader tải/reconstruct từ HF; source SST-2 và train-only preprocessing còn khác paper cần giải thích/xác minh. Không commit raw data. Kaggle backend chưa triển khai.
 
 Protocol: random 70/30, một pass, 5 trials, K=[1,4,16,64], các biến thể weighting/averaging/zeroing và khoảng 200 checkpoint cộng đầu/cuối. Chi tiết tuning/ROP trong [protocol](docs/experiment-protocol.md).
 
-Input dự kiến: features dense/sparse, nhãn -1/+1 và config/seed. Loader phải kiểm tra shape, labels, NaN/Inf, feature schema và tránh leakage. Output dự kiến: config, environment, checkpoint metrics, final metrics, timings, public run URL; **loader/runner/output thực nghiệm hiện chưa có**.
+Input: features dense/sparse, nhãn -1/+1 và config/seed. Loader kiểm tra shape/labels/NaN/Inf và fit text vocabulary trên train. Output từng run: config, environment, checkpoint/final metrics, timings, split/noise masks và run status. URL chỉ có khi chạy W&B online thành công. Xem [development evidence](results/development/sst2-baseline/README.md).
 
 ## W&B dùng ở đâu?
 
-TV3 phải tạo một project **public** dùng chung và tích hợp logging vào runners. `.env.example` chỉ là mẫu; chưa có code tự đọc `.env` hoặc gọi W&B. Đăng nhập tại máy chạy, không commit API key. Run offline cần sync và kiểm tra public access trước khi dẫn trong slide.
+`src/evaluation/tracking.py` đã gọi W&B với disabled/offline/online modes. CLI đọc `.env`, nhưng mode mặc định disabled; chọn `--wandb-mode online` rõ ràng khi cần upload. Nhóm cần tạo project **public**, đăng nhập bằng `wandb login`, cung cấp entity/project. Offline logging + artifacts đã chạy thử thành công; không có public run URL để trích dẫn. Xem [hướng dẫn W&B cho người mới](docs/tv3-running.md).
 
 Mỗi run cần dataset revision/checksum, config, seeds, commit, môi trường, metrics/plots. Mỗi kết quả tổng hợp dẫn đủ runs thành phần. Chi tiết: [tracking](docs/tracking.md).
 
 | Experiment | Script / API dự kiến | Input → output | W&B / trạng thái |
 |---|---|---|---|
-| PAC / FSOL và WRS | `experiments/run_reproduction.py` | 16 datasets + config → curves, ROP, final accuracy/sparsity | Chưa có script/run |
+| PAC / FSOL và WRS | `experiments/run_reproduction.py` | Data/config → curves, ROP, final accuracy/sparsity | Baseline SST-2 development đã chạy; WRS chờ TV2 |
 | Top-K, moving/EMA, runtime | `experiments/run_ablations.py` | Cùng data/trials → metrics/timings | Chưa có script/run |
-| Statistics / paper comparison | `experiments/summarize_results.py` | Runs thật → bảng, Wilcoxon, deviations | Chưa có script/run |
-| Code tác giả | `experiments/compare_reference.py` | Cùng config/data → divergence report | Chưa có script/run |
+| Statistics / paper comparison | `experiments/summarize_results.py`, `src/evaluation/statistics.py` | Runs thật → bảng/plots, paired statistics | Có summary/plots development; chưa có dữ liệu đầy đủ cho paper comparison |
+| Code tác giả | `experiments/compare_reference.py` | CSV đã normalize → matched/unmatched deltas | Có comparison helper; chưa chạy reference implementation |
 | EMBER / non-PA extensions | Cần xác minh và thiết kế | Cấu hình appendix C/E → kết quả tương ứng | Chưa có runner/run |
-| Label noise bổ sung | `experiments/run_noise_analysis.py` | Noisy train, clean test → noise curves | Chưa có script/run |
+| Label noise bổ sung | `experiments/run_noise_analysis.py` | Noisy train, clean test → metrics theo rates | Có script, synthetic smoke 5 rates; chưa có WRS noise results |
 
 ## Bàn giao
 

@@ -1,5 +1,7 @@
 # TV3 / nhóm trưởng: danh sách công việc
 
+Đã triển khai một phần trên nhánh tv3: xem [tiến độ có bằng chứng](tv3-progress.md) và [hướng dẫn chạy](tv3-running.md). Các checkbox dưới đây chỉ nghiệm thu khi đủ toàn bộ phạm vi, không đánh dấu hoàn tất chỉ từ development smoke.
+
 Cập nhật 14/11/2026. Nguồn: PDF phân công `requirements/course-project.pdf`, yêu cầu môn `requirements/project_description.txt`, paper Section 4 và phụ lục. PDF còn Core Scope; quyết định trực tiếp của nhóm trưởng thay bằng **đầy đủ paper**. Không sửa bản nguồn.
 
 ## 1. Tích hợp và điều phối
@@ -55,4 +57,4 @@ Cập nhật 14/11/2026. Nguồn: PDF phân công `requirements/course-project.p
 
 ## Trạng thái ban đầu
 
-`main` mới có scaffold/config/protocol. Chưa có loader, metrics, experiment runner, W&B run hoặc PPTX thực nghiệm. Có thể bắt đầu dữ liệu/metrics/tracking và chốt API ngay; full WRS experiments chờ TV2. Review chi tiết: [TV1/TV2](reviews/tv1-tv2-2026-11-14.md).
+Tại lúc lập checklist, main mới có scaffold/config/protocol. Trên tv3 hiện có loader/metrics/runners/tuning/tracking code, baseline development evidence và PPTX nháp; chưa có WAT/full reproduction/public W&B. Không thay checklist nghiệm thu toàn phần bằng trạng thái code đã viết. Review đầu vào: [TV1/TV2](reviews/tv1-tv2-2026-11-14.md).

@@ -81,4 +81,4 @@ if __name__ == "__main__":
         print("\n".join(issues), file=sys.stderr)
         raise SystemExit(1)
     print("PASS: 16 datasets, 5,920 planned jobs, unique IDs, source checksums, local links and coverage.")
-    print("This validates the scaffold only; algorithms, runs, public W&B and PPTX are pending.")
+    print("Scaffold checks do not establish full reproduction; verify implementation, runs, public W&B and slide coverage separately.")

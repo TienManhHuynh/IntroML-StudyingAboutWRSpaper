@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Group 8 full-scope reproduction framework for NeurIPS 2024 WRS/WAT"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["numpy", "scipy", "scikit-learn", "matplotlib", "wandb"]
+dependencies = ["numpy", "scipy", "scikit-learn", "matplotlib", "wandb", "huggingface_hub", "pyarrow", "python-dotenv"]
 
 [project.optional-dependencies]
 dev = ["pytest"]

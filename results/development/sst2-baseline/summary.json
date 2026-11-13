@@ -1,0 +1,220 @@
+[
+  {
+    "configuration": {
+      "C_err": 1,
+      "K": null,
+      "averaging": null,
+      "data": {
+        "dataset": "sst2",
+        "development_subset": true,
+        "filename": "data/train-00000-of-00001.parquet",
+        "n_samples": 600,
+        "n_test": 180,
+        "n_train": 420,
+        "preprocessing": "CountVectorizer fitted on train only",
+        "provider": "huggingface",
+        "repo_id": "stanfordnlp/sst2",
+        "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+        "source_notes": "Public HF training asset has 67349 rows versus paper Table 1 67337. CountVectorizer train-only fitting and this row-count difference must be reported; this is not yet a paper-equivalent dataset claim.",
+        "stratified": false,
+        "subset_selection_seed": 0,
+        "train_fraction": 0.7
+      },
+      "dirty": true,
+      "eta": 1,
+      "git_commit": "0047f272bcfa1a95bcc4104628975d9aa78761b5",
+      "include_wrs": false,
+      "lambda_": 0.01,
+      "learner": "fsol",
+      "model": "baseline",
+      "noise_rate": 0,
+      "weighting": null,
+      "zeroing": null
+    },
+    "n_trials": 5,
+    "five_trials_complete": true,
+    "all_public_run_urls_present": false,
+    "runs": [
+      {
+        "seed": 42,
+        "path": "results\\raw\\tv3-hosted\\fsol\\42",
+        "wandb_url": null,
+        "final_accuracy": 0.6611111111111111,
+        "final_sparsity": 0.4098159509202454,
+        "rop": 0.036585365853658514,
+        "train_seconds": 0.03727359998993052,
+        "evaluation_seconds_total": 0.010819699995408882
+      },
+      {
+        "seed": 43,
+        "path": "results\\raw\\tv3-hosted\\fsol\\43",
+        "wandb_url": null,
+        "final_accuracy": 0.6388888888888888,
+        "final_sparsity": 0.3323335332933413,
+        "rop": 0.030081300813008142,
+        "train_seconds": 0.0392343999883451,
+        "evaluation_seconds_total": 0.01154760000463284
+      },
+      {
+        "seed": 44,
+        "path": "results\\raw\\tv3-hosted\\fsol\\44",
+        "wandb_url": null,
+        "final_accuracy": 0.6388888888888888,
+        "final_sparsity": 0.400609756097561,
+        "rop": 0.028184281842818425,
+        "train_seconds": 0.040159600002880325,
+        "evaluation_seconds_total": 0.01159390000066196
+      },
+      {
+        "seed": 45,
+        "path": "results\\raw\\tv3-hosted\\fsol\\45",
+        "wandb_url": null,
+        "final_accuracy": 0.6388888888888888,
+        "final_sparsity": 0.3785982478097622,
+        "rop": 0.03319783197831982,
+        "train_seconds": 0.03957649998847046,
+        "evaluation_seconds_total": 0.011408799997298047
+      },
+      {
+        "seed": 46,
+        "path": "results\\raw\\tv3-hosted\\fsol\\46",
+        "wandb_url": null,
+        "final_accuracy": 0.6,
+        "final_sparsity": 0.40550029256875364,
+        "rop": 0.018021680216802175,
+        "train_seconds": 0.038672099999530474,
+        "evaluation_seconds_total": 0.01115389999722538
+      }
+    ],
+    "final_accuracy": {
+      "mean": 0.6355555555555555,
+      "min": 0.6,
+      "max": 0.6611111111111111
+    },
+    "final_sparsity": {
+      "mean": 0.3853715561379327,
+      "min": 0.3323335332933413,
+      "max": 0.4098159509202454
+    },
+    "rop": {
+      "mean": 0.029214092140921417,
+      "min": 0.018021680216802175,
+      "max": 0.036585365853658514
+    },
+    "train_seconds": {
+      "mean": 0.038983239993831374,
+      "min": 0.03727359998993052,
+      "max": 0.040159600002880325
+    }
+  },
+  {
+    "configuration": {
+      "C_err": 1,
+      "K": null,
+      "averaging": null,
+      "data": {
+        "dataset": "sst2",
+        "development_subset": true,
+        "filename": "data/train-00000-of-00001.parquet",
+        "n_samples": 600,
+        "n_test": 180,
+        "n_train": 420,
+        "preprocessing": "CountVectorizer fitted on train only",
+        "provider": "huggingface",
+        "repo_id": "stanfordnlp/sst2",
+        "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+        "source_notes": "Public HF training asset has 67349 rows versus paper Table 1 67337. CountVectorizer train-only fitting and this row-count difference must be reported; this is not yet a paper-equivalent dataset claim.",
+        "stratified": false,
+        "subset_selection_seed": 0,
+        "train_fraction": 0.7
+      },
+      "dirty": true,
+      "eta": 1,
+      "git_commit": "0047f272bcfa1a95bcc4104628975d9aa78761b5",
+      "include_wrs": false,
+      "lambda_": 0.01,
+      "learner": "pac",
+      "model": "baseline",
+      "noise_rate": 0,
+      "weighting": null,
+      "zeroing": null
+    },
+    "n_trials": 5,
+    "five_trials_complete": true,
+    "all_public_run_urls_present": false,
+    "runs": [
+      {
+        "seed": 42,
+        "path": "results\\raw\\tv3-hosted\\pac\\42",
+        "wandb_url": null,
+        "final_accuracy": 0.5833333333333334,
+        "final_sparsity": 0.08773006134969324,
+        "rop": 0.04756097560975608,
+        "train_seconds": 0.041500700024698745,
+        "evaluation_seconds_total": 0.013097300005028956
+      },
+      {
+        "seed": 43,
+        "path": "results\\raw\\tv3-hosted\\pac\\43",
+        "wandb_url": null,
+        "final_accuracy": 0.6555555555555556,
+        "final_sparsity": 0.08278344331133773,
+        "rop": 0.03211382113821139,
+        "train_seconds": 0.038056200013670605,
+        "evaluation_seconds_total": 0.011312400001770584
+      },
+      {
+        "seed": 44,
+        "path": "results\\raw\\tv3-hosted\\pac\\44",
+        "wandb_url": null,
+        "final_accuracy": 0.6555555555555556,
+        "final_sparsity": 0.12682926829268293,
+        "rop": 0.020189701897018963,
+        "train_seconds": 0.03666190000694769,
+        "evaluation_seconds_total": 0.011148400002639391
+      },
+      {
+        "seed": 45,
+        "path": "results\\raw\\tv3-hosted\\pac\\45",
+        "wandb_url": null,
+        "final_accuracy": 0.6055555555555555,
+        "final_sparsity": 0.1113892365456821,
+        "rop": 0.03062330623306232,
+        "train_seconds": 0.035827700010486296,
+        "evaluation_seconds_total": 0.010923099993306096
+      },
+      {
+        "seed": 46,
+        "path": "results\\raw\\tv3-hosted\\pac\\46",
+        "wandb_url": null,
+        "final_accuracy": 0.6,
+        "final_sparsity": 0.10590988882387362,
+        "rop": 0.03197831978319786,
+        "train_seconds": 0.038411800012909225,
+        "evaluation_seconds_total": 0.011085300000559073
+      }
+    ],
+    "final_accuracy": {
+      "mean": 0.62,
+      "min": 0.5833333333333334,
+      "max": 0.6555555555555556
+    },
+    "final_sparsity": {
+      "mean": 0.10292837966465393,
+      "min": 0.08278344331133773,
+      "max": 0.12682926829268293
+    },
+    "rop": {
+      "mean": 0.03249322493224932,
+      "min": 0.020189701897018963,
+      "max": 0.04756097560975608
+    },
+    "train_seconds": {
+      "mean": 0.038091660013742513,
+      "min": 0.035827700010486296,
+      "max": 0.041500700024698745
+    }
+  }
+]

@@ -180,10 +180,10 @@
       "paper_train_samples": 47135,
       "paper_test_samples": 20202,
       "paper_data_sparsity": 0.999421,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/stanfordnlp/sst2",
+      "hosted_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "development_only_equivalence_pending"
     },
     {
       "id": "url",
