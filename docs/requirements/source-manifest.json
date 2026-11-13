@@ -20,6 +20,13 @@
       "sha256": "64cc98acc25e52fcf05d951ebfbbc25aaa86c0022cd232beef3bcaf7c950026e",
       "imported_on": "2026-11-12",
       "source": "provided_by_team_leader"
+    },
+    {
+      "path": "docs/requirements/course-project.pdf",
+      "original_filename": "[IntroML] Course Project.pdf",
+      "sha256": "315d23768d7d4b04f469f729dc9a6570135ed658e7b0c54badcdf9755dfbe700",
+      "imported_on": "2026-11-14",
+      "source": "provided_by_team_leader"
     }
   ]
 }
