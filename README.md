@@ -4,7 +4,7 @@
 
 Nhóm nghiên cứu và tự hiện thực bài **Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling**, Skyler Wu, Fred Lu, Edward Raff, James Holt, NeurIPS 2024.
 
-**Trạng thái:** đã dựng khung tài liệu, phân công, cấu hình và công cụ lập kế hoạch. Thuật toán, downloader, experiment runners, W&B runs và slide kết quả **chưa triển khai/chạy**. CI kiểm tra khung không xác nhận tái hiện thành công.
+**Trạng thái:** đã dựng khung tài liệu, phân công, cấu hình và công cụ lập kế hoạch. TV2 đã hiện thực WRS/WAT và unit tests; xem [README TV2](src/wat/README.md). Learner thật TV1, downloader, experiment runners, W&B runs và slide kết quả **chưa triển khai/chạy**. Chưa kiểm chứng tích hợp TV1 hoặc reproduction. CI kiểm tra khung không xác nhận tái hiện thành công.
 
 ## Bắt đầu
 

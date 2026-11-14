@@ -1,4 +1,4 @@
-Nguồn học thuật: Wu et al., _Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling_, NeurIPS 2024, Section 2–3, Algorithm 1 (trang 3–5 của [paper trong repo](../papers/wrs-neurips2024.pdf)).
+Nguồn học thuật: Wu et al., _Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling_, NeurIPS 2024, Section 2–3, Algorithm 1 (trang 3–5 của [paper trong repo](../../papers/wrs-neurips2024.pdf)).
 
 ## 1. Bài toán WAT giải quyết
 
