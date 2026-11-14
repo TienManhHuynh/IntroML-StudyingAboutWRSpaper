@@ -2,49 +2,48 @@
 
 Repo đồ án Nhập môn Học máy của **24TNT1 - Nhóm 8**, nghiên cứu bài **Stabilizing Linear Passive-Aggressive Online Learning with Weighted Reservoir Sampling (NeurIPS 2024)**.
 
-Nhóm làm **đầy đủ paper / Full scope**: phương pháp, lý thuyết, training và inference pipelines, thí nghiệm chính cùng các mở rộng được kiểm kê trong kế hoạch. Label-noise analysis là phần làm thêm, không thay thí nghiệm paper.
+Nhóm làm **đầy đủ paper / Full scope**: phương pháp, lý thuyết, training và inference pipelines, thí nghiệm chính cùng các mở rộng được kiểm kê trong kế hoạch.
 
 ## Cấu trúc repo
 
 ```text
 IntroML-StudyingAboutWRSpaper/
-├── README.md                         Sơ đồ repo, trạng thái và hướng dẫn bắt đầu
-├── .gitignore                        Bỏ qua môi trường, khóa, cache và dữ liệu lớn
-├── .gitattributes                    Quy ước file, giữ nguyên bản nguồn
-├── .env.example                      Cấu hình W&B đề xuất, chưa có runner đọc
-├── pyproject.toml                    Dependencies cho giai đoạn triển khai
+├── README.md                         
+├── .gitignore                        
+├── .gitattributes                    
+├── .env.example                      Cấu hình W&B đề xuất
+├── pyproject.toml                    
 │
 ├── papers/
-│   ├── wrs-neurips2024.pdf            Paper gốc
-│   ├── CITATION.bib                  Thông tin trích dẫn
-│   └── NOTICE.md                     Nguồn và ghi công
+│   ├── wrs-neurips2024.pdf            
+│   ├── CITATION.bib                 
+│   └── NOTICE.md                 
 │
 ├── docs/
-│   ├── project-checklist.md          Yêu cầu môn và checklist nộp
-│   ├── task-plan.md                  Phân công và mốc nội bộ
-│   ├── tv3-tasks.md                  Danh sách công việc TV3 / nhóm trưởng
+│   ├── project-checklist.md          
+│   ├── task-plan.md                  
+│   ├── tv3-tasks.md                  
 │   ├── full-scope.md                 Ma trận thí nghiệm đầy đủ
 │   ├── experiment-protocol.md        Dữ liệu, tuning, seeds, metrics
 │   ├── implementation-contract.md    Giao diện tích hợp TV1 / TV2 / TV3
 │   ├── tracking.md                   W&B và quy tắc lưu bằng chứng
-│   ├── reviews/                      Kết quả kiểm tra nhánh thành viên
-│   └── requirements/                 Bản nguồn yêu cầu và phân công
+│   ├── reviews/                      
+│   └── requirements/                
 │
-├── configs/                          Registry 16 dataset và cấu hình Full scope
+├── configs/                          
 ├── src/
 │   ├── models/                       TV1: PAC / FSOL
 │   ├── wat/                          TV2: reservoir / WAT
 │   ├── data/                         TV3: downloader và preprocessing
 │   └── evaluation/                   TV3: metrics và thống kê
 ├── experiments/                      TV3: runners cần triển khai
-├── scripts/                          Kiểm tra khung, lập kế hoạch jobs
-├── tests/                            Tests thuật toán cần tích hợp
-├── results/                          Coverage và kết quả có nguồn
-├── figures/                          Hình nhóm tự vẽ và mã tạo plot
-└── slides/                           Outline và PPTX bàn giao
+├── scripts/                          
+├── tests/                            
+├── results/                          
+├── figures/                         
+└── slides/                           
 ```
 
-**Nhánh `tv3`:** đã tích hợp PAC/FSOL của TV1, triển khai loader/metrics/runners/tuning/noise/tracking và xuất kết quả. Có 10 baseline development runs trên 600 mẫu SST-2, cùng bản nháp 9 slide TV3. Chưa có WAT TV2, Full-scope reproduction hay W&B run public. Xem [hướng dẫn chạy TV3](docs/tv3-running.md) và [review ngày 14/11/2026](docs/reviews/tv1-tv2-2026-11-14.md).
 
 ## Mở nhanh
 
@@ -106,7 +105,7 @@ Protocol: random 70/30, một pass, 5 trials, K=[1,4,16,64], các biến thể w
 
 Input: features dense/sparse, nhãn -1/+1 và config/seed. Loader kiểm tra shape/labels/NaN/Inf và fit text vocabulary trên train. Output từng run: config, environment, checkpoint/final metrics, timings, split/noise masks và run status. URL chỉ có khi chạy W&B online thành công. Xem [development evidence](results/development/sst2-baseline/README.md).
 
-## W&B dùng ở đâu?
+## W&B kiểm chứng
 
 `src/evaluation/tracking.py` đã gọi W&B với disabled/offline/online modes. CLI đọc `.env`, nhưng mode mặc định disabled; chọn `--wandb-mode online` rõ ràng khi cần upload. Nhóm cần tạo project **public**, đăng nhập bằng `wandb login`, cung cấp entity/project. Offline logging + artifacts đã chạy thử thành công; không có public run URL để trích dẫn. Xem [hướng dẫn W&B cho người mới](docs/tv3-running.md).
 
@@ -127,6 +126,3 @@ Code tự viết từ paper; code tác giả chỉ dùng kiểm chứng. Hình t
 
 Mốc nội bộ: TV3 code/thí nghiệm 14/11/2026, slide 15/11, ghép/QA 16-20/11. Ngày 21/11 ghi trong phân công cần đối chiếu deadline Moodle. Bản nguồn còn chữ Core Scope; quyết định trực tiếp của nhóm trưởng là **làm đầy đủ paper**.
 
-## Nguồn và tái sử dụng
-
-Tài liệu nguồn giữ nguyên và có checksum trong `docs/requirements/source-manifest.json`. Hiện chưa nhập core code tác giả hoặc nhóm khác. README tham khảo cách bố trí của [online-iforest-reproduction](https://github.com/BrownieOro/online-iforest-reproduction); nội dung được viết cho WRS. Bổ sung nguồn mọi dataset/thư viện/phần tái sử dụng khi triển khai.
