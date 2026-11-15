@@ -1,3 +1,3 @@
 # TV3 - Dataset
 
-Bàn giao `loader.py` tải HF/Kaggle, xác minh revision/checksum và reconstruct. Registry `configs/datasets.json` có hosted_source=null khi chưa xác minh. Cache vào `data/` đã gitignore, không commit raw data. Loader chưa triển khai.
+`loader.py` đã có pinned HF downloads, SVMLight/NPZ/text-parquet readers, finite/label guards, sparse handling, reproducible split và train-only CountVectorizer. SST-2 là nguồn đã xác minh; còn 15 hosted sources và paper equivalence phải hoàn thiện. Kaggle backend chưa có. Xem [hướng dẫn TV3](../../docs/tv3-running.md).

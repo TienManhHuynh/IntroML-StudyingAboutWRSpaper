@@ -1,0 +1,11 @@
+dataset,learner,model,seed,noise_rate,revision,wandb_url,path,development
+sst2,fsol,baseline,42,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\fsol\42,True
+sst2,fsol,baseline,43,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\fsol\43,True
+sst2,fsol,baseline,44,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\fsol\44,True
+sst2,fsol,baseline,45,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\fsol\45,True
+sst2,fsol,baseline,46,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\fsol\46,True
+sst2,pac,baseline,42,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\pac\42,True
+sst2,pac,baseline,43,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\pac\43,True
+sst2,pac,baseline,44,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\pac\44,True
+sst2,pac,baseline,45,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\pac\45,True
+sst2,pac,baseline,46,0,8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb,,results\raw\tv3-hosted\pac\46,True
