@@ -1,0 +1,9 @@
+{
+  "baseline": {
+    "final_accuracy": 0.6,
+    "final_sparsity": 0.10590988882387362,
+    "rop": 0.03197831978319786,
+    "train_seconds": 0.038411800012909225,
+    "evaluation_seconds_total": 0.011085300000559073
+  }
+}

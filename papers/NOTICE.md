@@ -7,4 +7,4 @@
 - [Code tác giả](https://github.com/FutureComputing4AI/Weighted-Reservoir-Sampling-Augmented-Training)
 - [BibTeX](CITATION.bib)
 
-Hai file `docs/requirements/` là yêu cầu/phân công do nhóm trưởng cung cấp, giữ nguyên. `source-manifest.json` ghi SHA256 ba bản nguồn. Tài liệu Markdown diễn giải bằng lời riêng. Hình nộp tự vẽ/tái dựng, có citation, không cắt paper như sản phẩm nhóm. Chưa nhập code tác giả hoặc nhóm khác. Repo BrownieOro chỉ tham khảo cách tổ chức.
+Các tài liệu trong `docs/requirements/` là yêu cầu/phân công do nhóm trưởng cung cấp, giữ nguyên. `source-manifest.json` ghi SHA256 các bản nguồn. Tài liệu Markdown diễn giải bằng lời riêng. Hình nộp tự vẽ/tái dựng, có citation, không cắt paper như sản phẩm nhóm. Chưa nhập code tác giả hoặc nhóm khác. Repo BrownieOro chỉ tham khảo cách tổ chức.

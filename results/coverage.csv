@@ -11,7 +11,7 @@ MAIN,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verifi
 MAIN,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
 MAIN,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
 MAIN,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
+MAIN,sst2,TV3,development_only,,results/development/sst2-baseline/summary.json,10 local baseline trials on a 600-sample development subset; WRS/full reproduction/public W&B pending
 MAIN,url,TV3,planned,,,Implementation and hosted dataset verification pending
 MAIN,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
 MAIN,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
