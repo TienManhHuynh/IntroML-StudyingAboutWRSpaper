@@ -74,7 +74,36 @@ def summarize(paths, output):
         fig.savefig(svg)
         svg.write_text('\n'.join(line.rstrip() for line in svg.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8')
         plt.close(fig)
+    if summary:
+        _plot_group_errorbars(summary, out, plt)
     return {'runs':len(paths),'configuration_groups':len(groups)}
+
+
+def _plot_group_errorbars(summary, out, plt):
+    """Plot mean and min/max trial error bars per configuration group (paper Figures 2-4)."""
+    labels = []
+    for item in summary:
+        cfg = item['configuration']
+        ds = cfg['data']['dataset']
+        tag = cfg['model'] if cfg['model'] == 'baseline' else f"{cfg['model']}-K{cfg.get('K')}-{cfg.get('weighting') or ''}-{cfg.get('averaging') or ''}"
+        labels.append(f"{ds}:{cfg['learner']}:{tag}".rstrip('-'))
+    x = np.arange(len(summary))
+    fig, axes = plt.subplots(1, 3, figsize=(max(12, 0.7 * len(summary) + 6), 4.5), layout='constrained')
+    for ax, (metric, title) in zip(axes, (('final_accuracy', 'Final Accuracy'), ('rop', 'ROP (lower is better)'), ('final_sparsity', 'Final Sparsity'))):
+        means = np.array([item[metric]['mean'] for item in summary])
+        mins = np.array([item[metric]['min'] for item in summary])
+        maxs = np.array([item[metric]['max'] for item in summary])
+        ax.errorbar(x, means, yerr=[means - mins, maxs - means], fmt='o', capsize=4)
+        ax.set_title(title)
+        ax.set_xticks(x)
+        ax.set_xticklabels(labels, rotation=35, ha='right', fontsize=8)
+        ax.grid(alpha=0.25)
+    fig.suptitle('Group Summary (mean with min/max trial error bars)')
+    fig.savefig(out / 'group-errorbars.png', dpi=160)
+    svg = out / 'group-errorbars.svg'
+    fig.savefig(svg)
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text(encoding='utf-8').splitlines()) + '\n', encoding='utf-8')
+    plt.close(fig)
 
 
 if __name__=='__main__':

@@ -1,22 +1,18 @@
-# Tiến độ TV3 - nhánh tv3
+# Tiến độ TV3 - nhánh intergration-v1
 
-Ngày14/11/2026; phạm vi làm đầy đủ paper theo yêu cầu nhóm trưởng. Checklist gốc: [TV3 tasks](tv3-tasks.md). Đây là tiến độ có bằng chứng, không phải xác nhận hoàn thành deadline toàn phần.
+Cập nhật ngày 18/11/2026. Hoàn tất **Đợt 1 gồm 8/16 datasets Table 1** (`dexter`, `dorothea`, `pcmac`, `w8a`, `newsgroups-binary-cs`, `sst2`, `real-sim`, `news20`) với **1.275 runs `completed_online`** trên W&B public (100% có `wandb_url` mở được không cần đăng nhập).
 
-| Hạng mục deadline | Đã thực hiện | Còn thiếu |
+| Hạng mục deadline | Đã thực hiện | Còn thiếu / Ghi nhận giới hạn |
 |---|---|---|
-| Tích hợp learner TV1 | Merge nguyên trạng PAC/FSOL, tests pass | WAT TV2 và tests tích hợp thật |
-| Loader/preprocessing | HF pin revision/hash; SVMLight/NPZ/parquet; sparse/finite/labels guards; split/CountVectorizer/noise | Nguồn đủ 16 datasets và equivalence; Kaggle backend nếu dùng |
-| Accuracy/ROP/sparsity | Implement và tests tính tay; ROP âm; oracle/checkpoints; deviations | Review protocol với reference trên dữ liệu đầy đủ |
-| Experiment runner | Baseline/paired WRS-factory interface; lưu config/env/checkpoints/masks/status; từ chối overwrite | Chạy WRS thật sau TV2; ablation wrappers |
-| Fixed seeds/checkpoints | Split, stream, subset/noise seeds; đầu/cuối và logging grid | Chốt grid paper/reference chính xác |
-| Tuning | Grid PAC/FSOL và lựa chọn B.2, tests/35-trial synthetic smoke | Tuning datasets thật, đối chiếu round/tie convention |
-| W&B | Logging code disabled/offline/online, offline metrics/artifact smoke pass | Người dùng tạo/login public project, chạy online và xác minh run URLs |
-| PAC vs PAC-WRS / FSOL vs FSOL-WRS | 10 baseline local development trials trên SST-2 | Thiếu WAT: chưa có paired WRS results, chưa đủ Full scope |
-| Label noise | Runner 5 rates, train-only paired masks, synthetic smoke | Chạy noise trên real datasets + WRS, phân tích kết quả |
-| Bảng/plot/tái lập | Grouped summary, run index, SVG/PNG, evidence, environment lock | Full runs, public links, reference comparison thực tế |
-| Deviation/statistics | Delta/near-zero handling; normalized reference CSV helper; paired Wilcoxon/win count | Reference run outputs; đủ16 dataset means; chọn convention thống kê theo paper |
-| Slides22-30 | 9-slide PPTX nháp có notes/tables/charts và provenance | Thay phần pending bằng kết quả thật/public runs; ghép theme chung/QA deck cuối |
+| Tích hợp learner TV1 & WAT TV2 | Tích hợp `PAC`, `FSOL`, `src.wat.wat:WAT`; toàn bộ `pytest` pass (`41 passed, 4 subtests passed`) | Giữ nguyên ranh giới module TV1/TV2 |
+| Loader/preprocessing | Pin HF + SHA256 cho `stanfordnlp/sst2` và 7 bộ `sparse_npz` trên `TienManh2307/wrs-paper-datasets` khớp 100% `(N, D, sparsity)` Table 1 | 8 bộ lớn/khổng lồ còn lại (`webspam`, `rcv1`, `mnist8-4-9`, `url`, `kdd2010-algebra`, `avazu-*`, `criteo`) hoãn do giới hạn RAM/thời gian |
+| Accuracy/ROP/sparsity | Đầy đủ metrics, checkpoint grid 200 điểm + đầu/cuối, deviation helper, plots min/max error bars | — |
+| Experiment runner & Ablations | Hoàn thành `run_reproduction.py`, `run_ablations.py` (Top-K, Moving Avg, EMA), `run_noise_analysis.py`, `run_batch1.py` | Appendix C (`EMBER`) và Appendix E (`Non-PA`) chưa chạy |
+| Tuning (Appendix B.2) | Chạy xong tuning PAC (280 runs) & FSOL (4.160 runs) trên 8 bộ Đợt 1 (`results/tuning/`) | Phát hiện sai khác `ceil(2.5%)` vs `top_acc - 0.025` trong code tác giả; đã chạy 35 runs kiểm chứng `deviation_band` |
+| W&B public | **1.275 runs online** (`720` main + `320` ablations + `200` noise + `35` deviation_band), `0` link lỗi | — |
+| PAC vs PAC-WRS / FSOL vs FSOL-WRS | FSOL-WRS K=64 thắng ROP **6/8** bộ; PAC-WRS thắng **3/8** (`ceil(2.5%)`) và **4/8** ROP, **5/8** Acc (`top_acc - 0.025`) | Kết quả Wilcoxon đang là partial (`n=8/16`) |
+| Label noise bổ sung | Hoàn thành **200 runs** (`dexter`, `pcmac`, `w8a`, `sst2` × 5 rates); `w8a` 30% noise: WRS giữ `96.45%–96.55%` vs Base `60.23%–61.07%` | — |
+| Reference comparison | Chuẩn hóa `author_batch1_means.csv`, xuất `reference_comparison.csv`, phát hiện 4 điểm divergence trong `analyzer.ipynb` & `PAC_main.py` | — |
+| Slides 22–30 | Xuất `slides/tv3_experiments.pptx` từ số liệu thật & W&B URLs | Còn bước phối hợp TV1/TV2 ghép deck cuối 20–40 slides & QA Slide Show 100% |
 
-**Không tự thay code TV2 bằng thuật toán giả.** Factory identity chỉ tồn tại trong test để xác minh giao diện, không xuất số WRS. Code TV1 được giữ nguyên; finite guard của loader TV3 bảo vệ đường vào runner.
-
-Hướng dẫn chạy và W&B cho người mới: [TV3 running](tv3-running.md). Bằng chứng local: [SST-2 development](../results/development/sst2-baseline/README.md). Bản nháp: [PPTX](../slides/tv3_experiments_draft.pptx).
+Chi tiết kết quả tổng hợp nằm tại [results/batch1/summary.json](../results/batch1/summary.json), [results/batch1/run-index.csv](../results/batch1/run-index.csv), [results/batch1/wilcoxon_stats.json](../results/batch1/wilcoxon_stats.json), [results/batch1/runtime_table5.json](../results/batch1/runtime_table5.json) và thư mục [figures/](../figures/README.md).

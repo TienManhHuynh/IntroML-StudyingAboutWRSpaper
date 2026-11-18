@@ -84,7 +84,9 @@ def run_experiment(config, output, bundle=None):
             if step in steps:
                 start = time.perf_counter()
                 for name, model in models.items():
-                    checkpoints.append({'step': step, 'model': name, 'accuracy': accuracy(bundle.y_test, model.predict(bundle.X_test)), 'sparsity': sparsity(model.get_weights())})
+                    w = model.get_weights()
+                    pred = np.where(np.asarray(bundle.X_test @ w).reshape(-1) >= 0, 1, -1)
+                    checkpoints.append({'step': step, 'model': name, 'accuracy': accuracy(bundle.y_test, pred), 'sparsity': sparsity(w)})
                 evaluation_seconds += time.perf_counter() - start
             if step < len(noisy):
                 x = bundle.X_train[step]

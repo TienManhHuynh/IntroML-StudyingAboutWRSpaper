@@ -65,8 +65,9 @@ def check():
         group_rows = [row for row in coverage if row["group"] == group]
         if {row["dataset"] for row in group_rows} != expected or len(group_rows) != 16:
             errors.append("Incomplete or duplicated coverage: " + group)
+    allowed_wandb_prefixes = ("https://wandb.ai/", "https://forge.coreweave.com/wandb/")
     for row in coverage:
-        if row["status"] == "completed" and (not row["wandb_url"].startswith("https://wandb.ai/") or not row["artifact"]):
+        if row["status"] == "completed" and (not row["wandb_url"].startswith(allowed_wandb_prefixes) or not row["artifact"]):
             errors.append("Completed coverage lacks W&B URL/artifact: " + row["group"] + "/" + row["dataset"])
     return errors
 

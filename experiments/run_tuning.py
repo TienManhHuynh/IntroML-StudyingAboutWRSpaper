@@ -1,4 +1,5 @@
 """Appendix B.2 base-learner grid search, with an explicit top-2.5% rounding policy."""
+from concurrent.futures import ProcessPoolExecutor
 from itertools import product
 import json
 import math
@@ -7,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from experiments.run_reproduction import parser, run_experiment, write_json
+from src.data.loader import load_dataset, split_data
 
 
 def select_parameters(candidates):
@@ -38,13 +40,53 @@ def select_parameters(candidates):
     return {'selected': selected, 'top_count': count, 'rounding_policy': 'ceil; ties by parameter JSON', 'configurations': summaries}
 
 
+def _load_seed_bundle(args, seed):
+    """Load and split one seed bundle once so tuning configs reuse identical splits.
+
+    Parameters: base CLI args mapping and integer seed.
+    Returns: validated DatasetBundle for that seed.
+    """
+    if args['dataset'] == 'synthetic':
+        from sklearn.datasets import make_classification
+        X, y = make_classification(
+            n_samples=args.get('samples', 300), n_features=20, n_informative=8, random_state=seed
+        )
+        return split_data(X, 2 * y - 1, seed=seed, metadata={'dataset': 'synthetic', 'development_subset': True})
+    return load_dataset(
+        args['dataset'], seed=seed, source_file=args.get('sources'), max_samples=args.get('max_samples')
+    )
+
+
+def _run_seed_chunk(task):
+    """Evaluate a slice of parameter settings on one pre-loaded seed bundle.
+
+    Parameters: tuple (args, seed, indexed_settings, out_dir).
+    Returns: list of (config_index, trial_metrics_dict).
+    """
+    args, seed, indexed_settings, out_dir = task
+    bundle = _load_seed_bundle(args, seed)
+    results = []
+    for i, parameters in indexed_settings:
+        config = dict(args, **parameters)
+        config.update(seed=seed, experiment='base-tuning')
+        run_dir = Path(out_dir) / f'config-{i:03d}' / f'seed-{seed}'
+        run_experiment(config, run_dir, bundle=bundle)
+        metrics = json.loads((run_dir / 'metrics.json').read_text(encoding='utf-8'))['baseline']
+        results.append((i, dict(seed=seed, final_accuracy=metrics['final_accuracy'], rop=metrics['rop'])))
+    return results
+
+
 def main():
     """Evaluate the full configured learner grid on five trials and save selection."""
     from dotenv import load_dotenv
     load_dotenv(ROOT/'.env', override=False)
     p = parser()
     p.add_argument('--grid', default=str(ROOT/'configs/full_scope.json'))
+    p.add_argument('--jobs', type=int, default=1)
     args = vars(p.parse_args())
+    jobs = args.pop('jobs')
+    if jobs < 1:
+        p.error('--jobs must be at least 1')
     if args['include_wrs'] or args['noise_rate']:
         p.error('Tune clean base learners only')
     out = args.pop('output')
@@ -53,17 +95,27 @@ def main():
                 [{'eta':eta,'lambda_':lam} for eta,lam in product(grid['tuning']['fsol_eta'],grid['tuning']['fsol_lambda'])])
     # Refuse overwrite before running expensive jobs.
     out.mkdir(parents=True, exist_ok=False)
-    candidates = []
-    for i, parameters in enumerate(settings):
-        trials = []
-        for seed in grid['seeds']:
-            config = dict(args, **parameters)
-            config.update(seed=seed, experiment='base-tuning')
-            run_dir = out/f'config-{i:03d}'/f'seed-{seed}'
-            run_experiment(config, run_dir)
-            metrics = json.loads((run_dir/'metrics.json').read_text())['baseline']
-            trials.append(dict(seed=seed, final_accuracy=metrics['final_accuracy'], rop=metrics['rop']))
-        candidates.append({'parameters':parameters,'trials':trials})
+    for i in range(len(settings)):
+        (out / f'config-{i:03d}').mkdir()
+    indexed = list(enumerate(settings))
+    seeds = grid['seeds']
+    n_chunks = 1 if jobs == 1 else min(len(indexed), max(1, math.ceil(jobs / len(seeds))))
+    chunk_size = math.ceil(len(indexed) / n_chunks)
+    tasks = [
+        (args, seed, indexed[start:start + chunk_size], str(out))
+        for seed in seeds
+        for start in range(0, len(indexed), chunk_size)
+    ]
+    trials_by_cfg = {i: [] for i in range(len(settings))}
+    if jobs == 1:
+        batches = [_run_seed_chunk(task) for task in tasks]
+    else:
+        with ProcessPoolExecutor(max_workers=min(jobs, len(tasks))) as pool:
+            batches = list(pool.map(_run_seed_chunk, tasks))
+    for batch in batches:
+        for i, trial in batch:
+            trials_by_cfg[i].append(trial)
+    candidates = [{'parameters': parameters, 'trials': trials_by_cfg[i]} for i, parameters in indexed]
     write_json(out/'selection.json', select_parameters(candidates))
 
 

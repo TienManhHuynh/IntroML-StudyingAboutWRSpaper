@@ -1,8 +1,8 @@
-# Chạy phần TV3 trên nhánh tv3
+# Chạy phần TV3 trên nhánh intergration-v1
 
 ## Trạng thái
 
-Đã tích hợp nguyên trạng code PAC/FSOL từ nhánh TV1 (`d95f70d`) vào nhánh tv3; không sửa code của thành viên. TV2 chưa có WAT implementation ở thời điểm bàn giao. Loader chặn NaN/Inf trước learner. Full reproduction và W&B public chưa hoàn tất.
+Đã tích hợp hoàn chỉnh code PAC/FSOL từ nhánh TV1 (`src/models/`), WRS/WAT từ nhánh TV2 (`src/wat/`), cùng pipeline TV3 (`src/data/`, `src/evaluation/`, `experiments/`). Toàn bộ bộ kiểm thử `pytest` pass (`41 passed, 4 subtests passed`). Đợt 1 (**8/16 bộ dữ liệu Table 1** + Label Noise + Deviation Band) đã chạy xong **1.275 runs W&B online công khai** tại project `wrs-reproduction-group8`; 8 bộ rất lớn còn lại giữ trạng thái `planned` do giới hạn RAM trống `8.55 GB`.
 
 ## Cài đặt và kiểm tra
 
@@ -26,9 +26,9 @@ python experiments/run_reproduction.py --dataset sst2 --max-samples 600 --learne
 
 `--max-samples` là subset phát triển, không phải tái hiện đầy đủ. Subset seed=0 giữ cùng tập con giữa trials; --seed điều khiển random split và stream order. Không truyền max-samples sẽ tải toàn asset đã khai báo, nhưng vẫn phải xác minh equivalence và tuning trước báo reproduction. Không ghi đè output đã có; lỗi training/tracking lưu run.json=failed và trả exit khác 0.
 
-Source hiện xác minh: `stanfordnlp/sst2`, revision `8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb`, file train parquet. Asset 67.349 dòng khác paper 67.337; preprocessing train-only CountVectorizer cũng cần đối chiếu reference. Registry còn 15 dataset chưa có source xác minh. Không sửa count paper cho khớp asset đang có.
+Các nguồn đã xác minh và ghim SHA256 cho **Đợt 1 (8/16 bộ Table 1)**: `stanfordnlp/sst2` (revision `8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb`, `text_parquet`, 67.349 dòng HF vs 67.337 Table 1 do train-only `CountVectorizer`) và 7 bộ `sparse_npz` trên `TienManh2307/wrs-paper-datasets` (revision `27597e3350168b3786470fe15b6d93db15f8cd20`: `dexter`, `dorothea`, `pcmac`, `newsgroups-binary-cs`, `news20`, `w8a`, `real-sim`) khớp chính xác `(N, D, sparsity)` Table 1. 8 bộ rất lớn còn lại giữ `hosted_source: null` (`unverified`) do giới hạn RAM trống `8.55 GB`. Không sửa count paper cho khớp asset đang có.
 
-Loader hỗ trợ pinned HF assets ở dạng SVMLight, numeric NPZ (X,y) hoặc text parquet qua `configs/data_sources.json`. Để thêm nguồn, xác minh repo/revision/filename/format/label mapping/checksum và paper equivalence; không chỉ điền tên dataset. Kaggle chưa được triển khai như backend; cần chuyển nguồn hợp lệ sang HF hoặc bổ sung backend có kiểm thử khi chọn Kaggle.
+Loader hỗ trợ pinned HF assets ở dạng SVMLight, numeric NPZ (X,y), `sparse_npz` hoặc `text_parquet` qua `configs/data_sources.json`. Để thêm nguồn, xác minh repo/revision/filename/format/label mapping/checksum và paper equivalence; không chỉ điền tên dataset. Kaggle chưa được triển khai như backend; cần chuyển nguồn hợp lệ sang HF hoặc bổ sung backend có kiểm thử khi chọn Kaggle.
 
 Output từng run: config.json, environment.json, checkpoints.csv, metrics.json, split-indices.npz và run.json. Không có raw features trong artifacts. `reportable=false` là mặc định cần review dữ liệu/protocol và public run links, không tự đổi true vì process thành công.
 
@@ -58,7 +58,7 @@ TV1 dùng tie score=0 -> +1, không thêm bias/normalization. Các quy ước n�
 python experiments/run_noise_analysis.py --dataset sst2 --max-samples 600 --learner pac --rates 0 .05 .1 .2 .3 --output results/raw/noise-pac
 ```
 
-Chỉ flip train labels; cùng split/subset/noise seed cho các models/rates; test sạch. Các probabilities dùng cùng RNG nên masks lồng nhau. Ghi rate yêu cầu và số flip thực tế. Thêm --include-wrs và --wat-factory khi TV2 sẵn sàng. Đây là phân tích thêm, không thay Full scope.
+Chỉ flip train labels; cùng split/subset/noise seed cho các models/rates; test sạch. Các probabilities dùng cùng RNG nên masks lồng nhau. Ghi rate yêu cầu và số flip thực tế. Đây là phân tích bổ sung (200 runs trên 4 bộ `dexter`, `pcmac`, `w8a`, `sst2`), trình bày song song với kết quả chính chứ không thay thế các bộ `planned`.
 
 ## Tuning và tổng hợp
 
@@ -89,17 +89,14 @@ python experiments/run_reproduction.py --dataset sst2 --max-samples 600 --learne
 
 Offline đã được kiểm chứng bằng synthetic run, lưu trong wandb/runs/wandb/offline-run-*. Có thể sync bằng `wandb sync PATH_TO_RUN`, nhưng chỉ sync development run khi muốn chia sẻ kiểm tra pipeline, không đặt nó vào bảng reproduction như kết quả cuối. Cần cập nhật public URL sau sync. Không tự tạo account hoặc khai API key thay người dùng.
 
-## Slide và bằng chứng phát triển
+## Slide và bằng chứng thực nghiệm Đợt 1
 
-`slides/tv3_experiments_draft.pptx` là phần TV3 9 slides (22-30), có notes, tables/charts native và các trạng thái thiếu dữ liệu rõ ràng. Chart minh họa seed 42 hiển thị 11/41 checkpoints, làm tròn 6 decimals; summary tính từ toàn bộ checkpoints/5 trials. Source builder: scripts/build_tv3_slides.mjs, cần artifact-tool runtime; dựng từ evidence raw hoặc bản copy development/evidence sau checkout mới. Đây chưa phải deck nộp cuối.
+- Bản slide hoàn chỉnh của TV3 là `slides/tv3_experiments.pptx` gồm 9 slides (Slides 22–30), dựng từ số liệu thật 1.275 runs Đợt 1 (`results/batch1/`) qua `node scripts/build_tv3_slides.mjs`, có 3 native charts, 6 native tables, speaker notes 107–161 từ/slide (`<=500`), trích dẫn IEEE và URL W&B công khai.
+- Bản hoàn chỉnh `slides/tv3_experiments.pptx` đã thay thế bản nháp phát triển cũ (`tv3_experiments_draft.pptx`); lệnh `scripts/run_batch1.py` và `scripts/aggregate_batch1.py` cho phép tái sinh toàn bộ bảng số liệu, kiểm định Wilcoxon, `runtime_table5.json` và 5 bộ biểu đồ PNG/SVG tại `figures/`.
 
-Builder từ chối ghi đè final đã có; muốn tạo revision mới, truyền đường dẫn output mới làm argument thứ nhất, ví dụ `node scripts/build_tv3_slides.mjs slides/tv3_experiments_draft_v2.pptx`. Runtime paths có thể đặt qua RUNTIME_NODE_MODULES / PRESENTATIONS_SKILL_DIR / RUNTIME_PYTHON; dùng Node của runtime artifact-tool.
+`results/development/sst2-baseline/` lưu 10 baseline development runs ban đầu (PAC/FSOL x seeds42-46) trước khi hoàn thiện WRS và Đợt 1. Không dùng bản nháp phát triển này thay cho 1.275 runs chính thức trong `results/batch1/`.
 
-`results/development/sst2-baseline/` lưu 10 baseline development runs (PAC/FSOL x seeds42-46), summary/plots và bản sao evidence. Không có WRS/public W&B; metadata dirty=true vì chạy trong lúc viết code, nên không dùng như proof final code commit. Xem `validation.md` và không diễn giải kết quả này là reproduction paper.
+## Phần hoãn lại & việc nhóm còn lại
 
-## Phần còn chờ
-
-- WAT/reservoir/tests từ TV2; ablation wrappers và non-PA learners theo phân công thống nhất.
-- Hosted sources + equivalence đầy đủ 16 dataset, EMBER/appendix E.
-- Project W&B public do nhóm đăng nhập, rồi chạy đầy đủ tuned trials/variants.
-- Chạy code tác giả, đối chiếu paper và hoàn thiện result slides có run URLs.
+- 8 bộ rất lớn trong Table 1 (`webspam`, `rcv1`, `mnist8-4-9`, `url`, `kdd2010-algebra`, `avazu-app`, `avazu-site`, `criteo`) và Appendix C/E (`EMBER`, `NONPA`): giữ ở trạng thái `planned` do giới hạn RAM trống `8.55 GB` và thời gian trước hạn 21/11.
+- Việc còn lại trước khi nộp Moodle: ghép `slides/TV1.pptx` + `slides/tv2.pptx` + `slides/tv3_experiments.pptx`, bổ sung citation/số thứ tự slide đồng bộ cho TV1/TV2 và duyệt Slide Show toàn deck.

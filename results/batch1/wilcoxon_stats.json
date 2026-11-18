@@ -1,0 +1,863 @@
+{
+  "main_pac_k64_standard_simple_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 18.0,
+    "pvalue": 1.0,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_standard_simple_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_pac_k64_standard_weighted_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_standard_weighted_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 14.0,
+    "pvalue": 0.640625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_pac_k64_exponential_simple_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_exponential_simple_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_pac_k64_exponential_weighted_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 2,
+    "statistic": 8.0,
+    "pvalue": 0.1953125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_exponential_weighted_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 2,
+    "statistic": 11.0,
+    "pvalue": 0.3828125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_pac_k64_standard_simple_vz1_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 14.0,
+    "pvalue": 0.640625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_standard_simple_vz1_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_pac_k64_standard_weighted_vz1_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_pac_k64_standard_weighted_vz1_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 15.0,
+    "pvalue": 0.7421875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_pac_topk_k64_simple_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 12.0,
+    "pvalue": 0.4609375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_pac_topk_k64_simple_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_pac_topk_k64_weighted_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_pac_topk_k64_weighted_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 14.0,
+    "pvalue": 0.640625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_pac_moving_k64_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 9.0,
+    "pvalue": 0.25,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_pac_moving_k64_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_pac_ema_g0.9_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 4.0,
+    "pvalue": 0.0546875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_pac_ema_g0.9_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 5.0,
+    "pvalue": 0.625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_standard_simple_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 10.0,
+    "pvalue": 0.3125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_standard_simple_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 15.0,
+    "pvalue": 0.7421875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_standard_weighted_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 8.0,
+    "pvalue": 0.1953125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_standard_weighted_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_exponential_simple_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 7.0,
+    "pvalue": 0.1484375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_exponential_simple_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_exponential_weighted_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 15.0,
+    "pvalue": 0.7421875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_exponential_weighted_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 2,
+    "statistic": 12.0,
+    "pvalue": 0.4609375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_standard_simple_vz1_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_standard_simple_vz1_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 13.0,
+    "pvalue": 0.546875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "main_fsol_k64_standard_weighted_vz1_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 15.0,
+    "pvalue": 0.7421875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "main_fsol_k64_standard_weighted_vz1_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 15.0,
+    "pvalue": 0.7421875,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_fsol_topk_k64_simple_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 8.0,
+    "pvalue": 0.1953125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_fsol_topk_k64_simple_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 17.0,
+    "pvalue": 0.9453125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_fsol_topk_k64_weighted_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 6,
+    "statistic": 6.0,
+    "pvalue": 0.109375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_fsol_topk_k64_weighted_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 11.0,
+    "pvalue": 0.3828125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_fsol_moving_k64_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 7,
+    "statistic": 1.0,
+    "pvalue": 0.015625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_fsol_moving_k64_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 2,
+    "statistic": 10.0,
+    "pvalue": 0.3125,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "ablations_fsol_ema_g0.9_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 7,
+    "statistic": 3.0,
+    "pvalue": 0.0390625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "ablations_fsol_ema_g0.9_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 3,
+    "statistic": 6.0,
+    "pvalue": 0.4375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  },
+  "deviation_band_pac_k64_standard_simple_vz0_rop": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 4,
+    "statistic": 16.0,
+    "pvalue": 0.84375,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate"
+  },
+  "deviation_band_pac_k64_standard_simple_vz0_acc": {
+    "datasets": [
+      "dexter",
+      "dorothea",
+      "news20",
+      "newsgroups-binary-cs",
+      "pcmac",
+      "real-sim",
+      "sst2",
+      "w8a"
+    ],
+    "n_datasets": 8,
+    "full_16": false,
+    "candidate_wins_lower_is_better": 5,
+    "statistic": 14.0,
+    "pvalue": 0.640625,
+    "alternative": "two-sided",
+    "zero_method": "wilcox",
+    "difference": "baseline - candidate",
+    "note": "negated accuracy so candidate_wins_lower_is_better counts higher accuracy"
+  }
+}

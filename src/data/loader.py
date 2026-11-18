@@ -66,7 +66,7 @@ def load_dataset(dataset_id, seed=42, train_fraction=.7, source_file='configs/da
     """Download a pinned HF asset and return split features/labels with SHA256 provenance.
 
     source_file entries define repo_id, revision, filename, format and binary label mapping.
-    Supported formats: svmlight, numeric npz (X,y), text parquet (text/label columns).
+    Supported formats: svmlight, numeric npz (X,y), sparse_npz (CSR + y), text parquet.
     max_samples is explicitly a development subset; None loads the complete source asset.
     """
     from huggingface_hub import hf_hub_download
@@ -92,6 +92,10 @@ def load_dataset(dataset_id, seed=42, train_fraction=.7, source_file='configs/da
     elif spec['format'] == 'npz':
         with np.load(path, allow_pickle=False) as data:
             X, y = data['X'], data['y']
+    elif spec['format'] == 'sparse_npz':
+        with np.load(path, allow_pickle=False) as data:
+            X = sparse.csr_matrix((data['data'], data['indices'], data['indptr']), shape=tuple(data['shape']))
+            y = data['y']
     elif spec['format'] == 'text_parquet':
         import pyarrow.parquet as pq
         data = pq.read_table(path, columns=[spec['text_column'], spec['label_column']]).to_pydict()

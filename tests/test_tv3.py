@@ -121,3 +121,76 @@ def test_hf_text_source_train_only_vocabulary(tmp_path, monkeypatch):
     assert bundle.X_train.shape[1]==len(bundle.y_train)+1
     assert (bundle.X_test.getnnz(axis=1)==1).all()  # unique test tokens never entered vocabulary
     assert bundle.metadata['revision']=='a'*40
+
+
+def test_hf_sparse_npz_source(tmp_path, monkeypatch):
+    from src.data.loader import load_dataset
+    X = csr_matrix(np.eye(20, 5))
+    y = np.tile([-1, 1], 10)
+    path = tmp_path / 'sparse.npz'
+    np.savez_compressed(path, data=X.data, indices=X.indices, indptr=X.indptr, shape=X.shape, y=y)
+    monkeypatch.setattr('huggingface_hub.hf_hub_download', lambda **kwargs: str(path))
+    spec = tmp_path / 'sources.json'
+    spec.write_text(json.dumps({'fixture': {'repo_id': 'fixture/sparse', 'revision': 'b'*40, 'filename': 'sparse.npz',
+                         'format': 'sparse_npz', 'label_mapping': {'-1': -1, '1': 1}}}))
+    bundle = load_dataset('fixture', source_file=spec)
+    assert bundle.X_train.shape == (14, 5) and bundle.X_test.shape == (6, 5)
+    assert bundle.metadata['revision'] == 'b' * 40
+
+
+def test_tuning_parallel_matches_sequential(tmp_path, monkeypatch):
+    import sys
+    from experiments import run_tuning
+    grid = tmp_path / 'grid.json'
+    grid.write_text(json.dumps({
+        'seeds': [42, 43, 44, 45, 46],
+        'tuning': {'pac_C_err': [0.1, 1.0], 'fsol_eta': [1.0], 'fsol_lambda': [0.01]},
+    }))
+    out_seq = tmp_path / 'seq'
+    out_par = tmp_path / 'par'
+    for out, jobs in ((out_seq, '1'), (out_par, '2')):
+        monkeypatch.setattr(sys, 'argv', [
+            'run_tuning.py', '--dataset', 'synthetic', '--samples', '60', '--checkpoints', '10',
+            '--learner', 'pac', '--grid', str(grid), '--jobs', jobs, '--output', str(out),
+        ])
+        run_tuning.main()
+    assert json.loads((out_seq / 'selection.json').read_text()) == json.loads((out_par / 'selection.json').read_text())
+
+
+def test_ablation_wrappers_and_runner(tmp_path):
+    from experiments.run_ablations import (
+        ExponentialAverageEnsemble,
+        MovingAverageEnsemble,
+        TopKEnsemble,
+        run_ablation,
+    )
+    from src.models.pac import PAC
+
+    topk = TopKEnsemble(PAC(2, C_err=0.5), K=2, averaging='weighted')
+    topk.update([1., 0.], 1)
+    topk.update([2., 0.], 1)
+    topk.update([2., 0.], 1)
+    topk.update([-2., 0.], -1)
+    assert len(topk._heap) <= 2 and topk.get_weights().shape == (2,)
+
+    ma = MovingAverageEnsemble(PAC(2, C_err=0.5), K=2)
+    ma.update([1., 0.], 1)
+    w1 = ma.base_learner.get_weights()
+    ma.update([0., 1.], 1)
+    w2 = ma.base_learner.get_weights()
+    np.testing.assert_allclose(ma.get_weights(), 0.5 * (w1 + w2))
+
+    ema = ExponentialAverageEnsemble(PAC(2, C_err=0.5), gamma=0.9)
+    ema.update([1., 0.], 1)
+    np.testing.assert_allclose(ema.get_weights(), 0.9 * ema.base_learner.get_weights())
+
+    for method in ('topk', 'moving_average', 'exponential_average'):
+        out = tmp_path / method
+        state = run_ablation(dict(
+            dataset='synthetic', learner='pac', method=method, seed=42, C_err=1.0,
+            eta=1.0, lambda_=0.01, K=4, averaging='simple', gamma=0.9, samples=60,
+            checkpoints=10, experiment='test-ablation', wandb_mode='disabled',
+        ), out)
+        assert state['status'] == 'completed_local'
+        metrics = json.loads((out / 'metrics.json').read_text())
+        assert 'baseline' in metrics and method in metrics
