@@ -65,8 +65,9 @@ def check():
         group_rows = [row for row in coverage if row["group"] == group]
         if {row["dataset"] for row in group_rows} != expected or len(group_rows) != 16:
             errors.append("Incomplete or duplicated coverage: " + group)
+    allowed_wandb_prefixes = ("https://wandb.ai/", "https://forge.coreweave.com/wandb/")
     for row in coverage:
-        if row["status"] == "completed" and (not row["wandb_url"].startswith("https://wandb.ai/") or not row["artifact"]):
+        if row["status"] == "completed" and (not row["wandb_url"].startswith(allowed_wandb_prefixes) or not row["artifact"]):
             errors.append("Completed coverage lacks W&B URL/artifact: " + row["group"] + "/" + row["dataset"])
     return errors
 
@@ -81,4 +82,4 @@ if __name__ == "__main__":
         print("\n".join(issues), file=sys.stderr)
         raise SystemExit(1)
     print("PASS: 16 datasets, 5,920 planned jobs, unique IDs, source checksums, local links and coverage.")
-    print("This validates the scaffold only; algorithms, runs, public W&B and PPTX are pending.")
+    print("Scaffold checks do not establish full reproduction; verify implementation, runs, public W&B and slide coverage separately.")

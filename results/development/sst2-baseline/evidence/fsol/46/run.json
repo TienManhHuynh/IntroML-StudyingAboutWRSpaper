@@ -1,0 +1,7 @@
+{
+  "status": "completed_local",
+  "wandb_url": null,
+  "reportable": false,
+  "development_run": true,
+  "note": "Successful execution is not evidence of paper equivalence. Review dataset/protocol and public W&B before reporting."
+}

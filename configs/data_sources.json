@@ -1,0 +1,101 @@
+{
+  "sst2": {
+    "repo_id": "stanfordnlp/sst2",
+    "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "filename": "data/train-00000-of-00001.parquet",
+    "format": "text_parquet",
+    "text_column": "sentence",
+    "label_column": "label",
+    "label_mapping": {
+      "0": -1,
+      "1": 1
+    },
+    "vectorizer": {},
+    "notes": "Public HF training asset has 67349 rows versus paper Table 1 67337. CountVectorizer train-only fitting and this row-count difference must be reported; this is not yet a paper-equivalent dataset claim.",
+    "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09"
+  },
+  "dexter": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "dexter.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from UCI Dexter train+valid (600x20000, sparsity 0.995319) via scripts/prepare_datasets.py.",
+    "sha256": "632ce1ccda08d85b8083d6f156ec964efe42db10846067dcbb3efd6f7c338cb5"
+  },
+  "dorothea": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "dorothea.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from UCI Dorothea train+valid (1150x100000, sparsity 0.990909) via scripts/prepare_datasets.py.",
+    "sha256": "a07527c167144254e5961ca9fc9617267bed454cf4bacc98b76a87c0a1198fed"
+  },
+  "pcmac": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "pcmac.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from scikit-feature PCMAC.mat (1943x3289, sparsity 0.985418) via scripts/prepare_datasets.py.",
+    "sha256": "d43947fb9246f218ffa5061da0f2b4b83c51eb31be8aa9e4777fcbbf51f31968"
+  },
+  "newsgroups-binary-cs": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "newsgroups-binary-cs.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from sklearn fetch_20newsgroups_vectorized (comp+sci=+1, non-empty rows=18311, D=101631, sparsity 0.999049) via scripts/prepare_datasets.py.",
+    "sha256": "440ae946f38fa8fd0f6eabfd557efa1b6aa28364064491a772dba038c32681fd"
+  },
+  "news20": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "news20.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from LIBSVM news20.binary.bz2 (non-empty rows=19954, D=1355191, sparsity 0.999664) via scripts/prepare_datasets.py.",
+    "sha256": "b06d1f72269e067abc4e47abcf884c87f37ee101ff41e3cd6d0f0d4b77cfcb65"
+  },
+  "w8a": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "w8a.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from LIBSVM w8a + w8a.t (non-empty rows=59245, D=300, sparsity 0.957585) via scripts/prepare_datasets.py.",
+    "sha256": "7b7bdcf98b7cc344d795206b827959561cd170b773d498a4d799ba852a807647"
+  },
+  "real-sim": {
+    "repo_id": "TienManh2307/wrs-paper-datasets",
+    "revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+    "filename": "real-sim.npz",
+    "format": "sparse_npz",
+    "label_mapping": {
+      "-1": -1,
+      "1": 1
+    },
+    "notes": "Prepared from LIBSVM real-sim.bz2 (non-empty rows=72201, D=20958, sparsity 0.997549) via scripts/prepare_datasets.py.",
+    "sha256": "535f28df49c7e1686b54fd237d3ab0c7a974eb1fa0558be5738f753a163fd0ac"
+  }
+}

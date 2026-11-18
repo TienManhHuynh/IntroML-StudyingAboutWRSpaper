@@ -19,6 +19,7 @@ results/raw/
 results/plans/
 checkpoints/
 tmp/
+.chart-data-*/
 .ipynb_checkpoints/
 .DS_Store
 Thumbs.db

@@ -1,0 +1,846 @@
+{
+  "selected": {
+    "parameters": {
+      "eta": 0.25,
+      "lambda_": 0.1
+    },
+    "mean_final_accuracy": 0.8529373917347192,
+    "mean_rop": 0.00795320600659164
+  },
+  "top_count": 3,
+  "rounding_policy": "ceil; ties by parameter JSON",
+  "configurations": [
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8498094531056669,
+      "mean_rop": 0.006654773644767994
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.851125958921059,
+      "mean_rop": 0.006005015752713791
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8515713932195002,
+      "mean_rop": 0.006182056803337928
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8519871318980451,
+      "mean_rop": 0.006547564085043723
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8488690918089581,
+      "mean_rop": 0.005937400352850936
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.793199703043801,
+      "mean_rop": 0.004276612483240809
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6490769611482307,
+      "mean_rop": 0.002906280278882748
+    },
+    {
+      "parameters": {
+        "eta": 0.125,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8453749072011878,
+      "mean_rop": 0.008470293915229592
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8517495669388765,
+      "mean_rop": 0.007852890952315875
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.84878000494927,
+      "mean_rop": 0.007715936526228051
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8529373917347192,
+      "mean_rop": 0.00795320600659164
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8448502845830239,
+      "mean_rop": 0.007664079995961791
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7916555308092056,
+      "mean_rop": 0.005703922850484029
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6450086612224697,
+      "mean_rop": 0.00375543711780124
+    },
+    {
+      "parameters": {
+        "eta": 0.25,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8349913387775303,
+      "mean_rop": 0.010034016997418254
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8406731007176441,
+      "mean_rop": 0.009504617471907964
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8417124474140063,
+      "mean_rop": 0.009521065792049399
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8412769116555309,
+      "mean_rop": 0.009957241754602388
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8384954219252659,
+      "mean_rop": 0.009731298961761347
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7826280623608018,
+      "mean_rop": 0.007133892526971675
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6359514971541698,
+      "mean_rop": 0.005162260954568903
+    },
+    {
+      "parameters": {
+        "eta": 0.5,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8384261321455085,
+      "mean_rop": 0.010574693963983594
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8362484533531305,
+      "mean_rop": 0.010705985046310148
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8361197723335808,
+      "mean_rop": 0.01094689876526794
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 1.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.829240287057659,
+      "mean_rop": 0.011810287833290859
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8294382578569662,
+      "mean_rop": 0.012093750500159435
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 2.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.829240287057659,
+      "mean_rop": 0.011810287833290859
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8252907696114823,
+      "mean_rop": 0.010524314827742017
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 4.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.829240287057659,
+      "mean_rop": 0.011810287833290859
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8304083147735708,
+      "mean_rop": 0.011906810909569947
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 8.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8284187082405344,
+      "mean_rop": 0.011720708508927771
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 16.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8296164315763424,
+      "mean_rop": 0.011405432624061084
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 32.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8294085622370699,
+      "mean_rop": 0.01183417237002318
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.8303489235337788,
+      "mean_rop": 0.011978563012701893
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 64.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8295075476367236,
+      "mean_rop": 0.011727898493181208
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.820123731749567,
+      "mean_rop": 0.011837767362149906
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 128.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8296065330363771,
+      "mean_rop": 0.01141217939010713
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.820123731749567,
+      "mean_rop": 0.011837767362149906
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 256.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 0
+      },
+      "mean_final_accuracy": 0.8290522147983174,
+      "mean_rop": 0.011451281085293658
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 0.001
+      },
+      "mean_final_accuracy": 0.8300222717149219,
+      "mean_rop": 0.012075233828383445
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 0.01
+      },
+      "mean_final_accuracy": 0.820123731749567,
+      "mean_rop": 0.011837767362149906
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 0.1
+      },
+      "mean_final_accuracy": 0.8206780499876268,
+      "mean_rop": 0.012132704455943494
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 1.0
+      },
+      "mean_final_accuracy": 0.8222519178421184,
+      "mean_rop": 0.011008900067837005
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 10.0
+      },
+      "mean_final_accuracy": 0.7664241524375155,
+      "mean_rop": 0.008665556158824781
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 100.0
+      },
+      "mean_final_accuracy": 0.6246770601336303,
+      "mean_rop": 0.007767546824156868
+    },
+    {
+      "parameters": {
+        "eta": 512.0,
+        "lambda_": 1000.0
+      },
+      "mean_final_accuracy": 0.5582677555060629,
+      "mean_rop": 0.0
+    }
+  ]
+}

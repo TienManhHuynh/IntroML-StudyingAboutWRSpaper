@@ -1,0 +1,62 @@
+{
+  "selected": {
+    "parameters": {
+      "C_err": 0.1
+    },
+    "mean_final_accuracy": 0.857757980697847,
+    "mean_rop": 0.0056992444360725505
+  },
+  "top_count": 1,
+  "rounding_policy": "ceil; ties by parameter JSON",
+  "configurations": [
+    {
+      "parameters": {
+        "C_err": 0.001
+      },
+      "mean_final_accuracy": 0.7772234595397178,
+      "mean_rop": 0.003071009712634555
+    },
+    {
+      "parameters": {
+        "C_err": 0.01
+      },
+      "mean_final_accuracy": 0.8450185597624351,
+      "mean_rop": 0.0039942332386569985
+    },
+    {
+      "parameters": {
+        "C_err": 0.1
+      },
+      "mean_final_accuracy": 0.857757980697847,
+      "mean_rop": 0.0056992444360725505
+    },
+    {
+      "parameters": {
+        "C_err": 1.0
+      },
+      "mean_final_accuracy": 0.8451670378619154,
+      "mean_rop": 0.007043476012661266
+    },
+    {
+      "parameters": {
+        "C_err": 10.0
+      },
+      "mean_final_accuracy": 0.8402672605790646,
+      "mean_rop": 0.007264198679948435
+    },
+    {
+      "parameters": {
+        "C_err": 100.0
+      },
+      "mean_final_accuracy": 0.8393961890621133,
+      "mean_rop": 0.00734461816135851
+    },
+    {
+      "parameters": {
+        "C_err": 1000.0
+      },
+      "mean_final_accuracy": 0.8393664934422173,
+      "mean_rop": 0.00731659692135708
+    }
+  ]
+}

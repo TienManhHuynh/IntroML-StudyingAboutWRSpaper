@@ -54,10 +54,10 @@
       "paper_train_samples": 420,
       "paper_test_samples": 180,
       "paper_data_sparsity": 0.995319,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "dorothea",
@@ -68,10 +68,10 @@
       "paper_train_samples": 805,
       "paper_test_samples": 345,
       "paper_data_sparsity": 0.990909,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "kdd2010-algebra",
@@ -110,10 +110,10 @@
       "paper_train_samples": 13967,
       "paper_test_samples": 5987,
       "paper_data_sparsity": 0.999664,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "newsgroups-binary-cs",
@@ -124,10 +124,10 @@
       "paper_train_samples": 12817,
       "paper_test_samples": 5494,
       "paper_data_sparsity": 0.999049,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "pcmac",
@@ -138,10 +138,10 @@
       "paper_train_samples": 1360,
       "paper_test_samples": 583,
       "paper_data_sparsity": 0.985418,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "rcv1",
@@ -166,10 +166,10 @@
       "paper_train_samples": 50540,
       "paper_test_samples": 21661,
       "paper_data_sparsity": 0.997549,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "sst2",
@@ -180,10 +180,10 @@
       "paper_train_samples": 47135,
       "paper_test_samples": 20202,
       "paper_data_sparsity": 0.999421,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/stanfordnlp/sst2",
+      "hosted_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "development_only_equivalence_pending"
     },
     {
       "id": "url",
@@ -208,10 +208,10 @@
       "paper_train_samples": 41471,
       "paper_test_samples": 17774,
       "paper_data_sparsity": 0.957585,
-      "hosted_source": null,
-      "hosted_revision": null,
-      "download_status": "unverified",
-      "preprocessing_status": "pending"
+      "hosted_source": "https://huggingface.co/datasets/TienManh2307/wrs-paper-datasets",
+      "hosted_revision": "27597e3350168b3786470fe15b6d93db15f8cd20",
+      "download_status": "hf_asset_verified",
+      "preprocessing_status": "table1_verified"
     },
     {
       "id": "webspam",

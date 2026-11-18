@@ -1,100 +1,100 @@
 group,dataset,owner,status,wandb_url,artifact,note
-MAIN,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,url,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-MAIN,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,url,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-TOPK,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,url,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-AVERAGING,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,url,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-RUNTIME,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,url,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-REFERENCE,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,avazu-app,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,avazu-site,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,criteo,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,dexter,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,dorothea,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,kdd2010-algebra,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,mnist8-4-9,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,news20,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,newsgroups-binary-cs,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,pcmac,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,rcv1,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,real-sim,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,sst2,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,url,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,w8a,TV3,planned,,,Implementation and hosted dataset verification pending
-NOISE,webspam,TV3,planned,,,Implementation and hosted dataset verification pending
-STATS,all-16,TV3,planned,,,Requires all paired dataset results
+MAIN,avazu-app,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+MAIN,avazu-site,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+MAIN,criteo,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+MAIN,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/1jwevy5l,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,dorothea,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/0ks7b42t,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,kdd2010-algebra,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+MAIN,mnist8-4-9,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+MAIN,news20,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/todr3o2s,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,newsgroups-binary-cs,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/lf6t0vxe,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/dqf3mo8p,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,rcv1,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+MAIN,real-sim,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/kjgr7wu5,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/a52skr4u,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,url,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+MAIN,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/mvzik0wd,results/batch1/summary.json,Batch 1 complete: 90 online W&B runs (PAC/FSOL x 9 WRS variants x 5 seeds 42-46)
+MAIN,webspam,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+TOPK,avazu-app,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+TOPK,avazu-site,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+TOPK,criteo,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+TOPK,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/ht3gyhhc,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,dorothea,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/mywlxl4f,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,kdd2010-algebra,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+TOPK,mnist8-4-9,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+TOPK,news20,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/dqg8b5pu,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,newsgroups-binary-cs,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/c1km36hn,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/arfkfrqk,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,rcv1,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+TOPK,real-sim,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/cxnmshfx,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/o5ayrgkq,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,url,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+TOPK,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/y8pmu7oc,results/batch1/summary.json,Batch 1 complete: Top-K K=64 simple/weighted x PAC/FSOL x 5 seeds
+TOPK,webspam,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+AVERAGING,avazu-app,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+AVERAGING,avazu-site,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+AVERAGING,criteo,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+AVERAGING,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/6g50zap6,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,dorothea,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/w68o5v4z,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,kdd2010-algebra,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+AVERAGING,mnist8-4-9,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+AVERAGING,news20,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/19h8uhu9,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,newsgroups-binary-cs,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/tyn377gx,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/pow1oiud,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,rcv1,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+AVERAGING,real-sim,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/bkoh087s,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/pm0wv626,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,url,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+AVERAGING,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/nhh8p6gc,results/batch1/summary.json,Batch 1 complete: Moving avg K=64 and EMA gamma=0.9 x PAC/FSOL x 5 seeds
+AVERAGING,webspam,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+RUNTIME,avazu-app,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+RUNTIME,avazu-site,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+RUNTIME,criteo,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+RUNTIME,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/qx73l8yc,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,dorothea,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/fjfqvorx,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,kdd2010-algebra,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+RUNTIME,mnist8-4-9,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+RUNTIME,news20,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/z7y6ri8j,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,newsgroups-binary-cs,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/yue0lg96,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/nrjzbilv,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,rcv1,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+RUNTIME,real-sim,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/v7obqgsw,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/jbxsiu46,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,url,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+RUNTIME,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/gkilyxxe,results/batch1/runtime_table5.json,Batch 1 complete: train_seconds ratios WRS vs Moving Avg / EMA (Table 5)
+RUNTIME,webspam,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+REFERENCE,avazu-app,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+REFERENCE,avazu-site,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+REFERENCE,criteo,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+REFERENCE,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/dna9qmcf,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,dorothea,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/o0lu1r1i,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,kdd2010-algebra,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+REFERENCE,mnist8-4-9,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+REFERENCE,news20,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/iqmk2655,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,newsgroups-binary-cs,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/ki7zsong,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/uxngzc2d,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,rcv1,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+REFERENCE,real-sim,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/zv7ox9cp,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/fyluqj2o,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,url,TV3,planned,,,Deferred due to local 8.55 GB free RAM / time limit before 21/11 deadline
+REFERENCE,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/ypocloq6,results/batch1/reference_comparison.csv,Normalized comparison vs author logs + deviation_band check
+REFERENCE,webspam,TV3,planned,,,Deferred in Batch 2 scope prioritization before 21/11 deadline
+NOISE,avazu-app,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,avazu-site,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,criteo,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,dexter,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/ofxkyssm,results/batch1/summary.json,"Complete: train-only label noise [0,0.05,0.1,0.2,0.3] x PAC/FSOL x 5 seeds"
+NOISE,dorothea,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,kdd2010-algebra,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,mnist8-4-9,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,news20,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,newsgroups-binary-cs,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,pcmac,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/mkts1d5i,results/batch1/summary.json,"Complete: train-only label noise [0,0.05,0.1,0.2,0.3] x PAC/FSOL x 5 seeds"
+NOISE,rcv1,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,real-sim,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,sst2,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/9j435cy6,results/batch1/summary.json,"Complete: train-only label noise [0,0.05,0.1,0.2,0.3] x PAC/FSOL x 5 seeds"
+NOISE,url,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+NOISE,w8a,TV3,completed,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/7mbaow9o,results/batch1/summary.json,"Complete: train-only label noise [0,0.05,0.1,0.2,0.3] x PAC/FSOL x 5 seeds"
+NOISE,webspam,TV3,planned,,,"Not selected in 4-dataset noise subset (dexter, pcmac, w8a, sst2 completed)"
+STATS,all-16,TV3,partial_batch1,https://forge.coreweave.com/wandb/tienmanhhuynh2307-tr-ng-i-h-c-khoa-h-c-t-nhi-n-hqg-hcm/wrs-reproduction-group8/runs/a52skr4u,results/batch1/wilcoxon_stats.json,Wilcoxon paired tests across 8 Batch 1 datasets (full_16=false)
 EMBER,ember,TV3,planned,,,Verify Appendix C dataset edition/split/variants
 NONPA,appendix-e-datasets-to-verify,TV1+TV2+TV3,planned,,,"Verify modified WAT, dataset and defaults"
