@@ -96,7 +96,7 @@ Hai script trên chỉ kiểm tra tài liệu/cấu hình và sinh **kế hoạc
 
 Chạy toàn bộ kiểm thử bằng `python -m pytest -q` (hoặc `python -m pytest -q -p no:cacheprovider`, gồm tests TV1, TV2 và TV3; hiện pass `41 passed, 4 subtests passed`). Tests không cần dữ liệu mạng hoặc tài khoản W&B. Chạy smoke test local: `python experiments/run_reproduction.py --dataset sst2 --max-samples 600 --learner pac --output results/raw/my-pac-42`.
 
-### Ngăn xếp thư viện, lý do sử dụng & tái sử dụng mã nguồn
+### Stack thư viện, lý do sử dụng & tái sử dụng mã nguồn
 
 - **Thuật toán cốt lõi tự hiện thực 100% từ mô tả bài báo**: `PAC` / `PA-II`, `FSOL` (`src/models/`), `WeightedReservoir` / `WAT` (`src/wat/`), các baseline đối chứng `Top-K` / `MovingAverage` / `ExponentialAverage` (`experiments/run_ablations.py`) và thước đo `accuracy` / `sparsity` / `ROP` (`src/evaluation/metrics.py`).
 - **Tái sử dụng trong scientific stack chuẩn (`numpy`, `scipy`, `scikit-learn`)**:
